@@ -8,16 +8,17 @@ Thank you for your interest in contributing to React-Pay! We appreciate your sup
 
 2. Fork the repository and create a new branch with a descriptive name (e.g., `feature/add-transaction-history` or `bugfix/fix-login-issue`).
 2.1 Make sure you have the latest version of the repository:
-`git fetch origin
+```
+git fetch origin
 git checkout master (or main, depending on the default branch name)
 git pull
-git checkout -b branch-name`
-2.2 
+git checkout -b branch-name
+```
 3. Write your code, following the project's code style and best practices. Be sure to include tests and documentation as necessary.
 
 4. Commit your changes using descriptive commit messages that explain the changes made and their purpose.
 `git push -u origin branch-name`
-4.1 
+
 7. Go to the GitHub or GitLab repository and create a pull request from your branch to the `master` (or `main`) branch.
 
 
