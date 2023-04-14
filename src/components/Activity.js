@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Activity.css";
 import { RiDownload2Fill } from "react-icons/ri";
 import { BsBank } from "react-icons/bs";
@@ -9,8 +9,8 @@ const Activity = () => {
       id: 1,
       name: "John Smith",
       email: "john.smith@example.com",
-      date: "2023-04-12",
-      type: "Payment Received",
+      date: "3 Mar",
+      type: "Payment",
       status: "Completed",
       amount: 125.0,
     },
@@ -18,8 +18,8 @@ const Activity = () => {
       id: 2,
       name: "Jane Doe",
       email: "jane.doe@example.com",
-      date: "2023-04-10",
-      type: "Payment Sent",
+      date: "3 Mar",
+      type: "Payment",
       status: "Completed",
       amount: 75.0,
     },
@@ -27,24 +27,59 @@ const Activity = () => {
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterDate, setFilterDate] = useState("all");
-  const [filterType, setFilterType] = useState("all");
-  const [filterStatus, setFilterStatus] = useState("all");
+  const [filterDate, setFilterDate] = useState("3 Mar");
+  const [filterType, setFilterType] = useState("Type");
+  const [filterStatus, setFilterStatus] = useState("Status");
+  const [hasOutline, setHasOutline] = useState(false);
+  const inputRef = useRef(null);
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const dateOptions = [
+    "This Month",
+    "Last Month",
+    "Last 90 Days",
+    "This Year",
+    "Last Year",
+  ];
+  const typeOptions = ["Automatic Payments", "Payments", "Payments Received", "Refunds", "Transfers", "Reported Transactions"];
+  const statusOptions = ["Incoming payments to review", "Tracking numbers to add", "Shipping labels to print", "Payment requests to review", "Invoices to pay", "Holds"];
+
+  function handleButtonClick() {
+    setIsOpen1(!isOpen1);
+    setIsOpen2(false)
+    setIsOpen3(false)
+  }
+
+  function handleButtonClick1() {
+    setIsOpen2(!isOpen2);
+    setIsOpen1(false)
+    setIsOpen3(false)
+  }
+
+  function handleButtonClick2() {
+    setIsOpen3(!isOpen3);
+    setIsOpen2(false)
+    setIsOpen1(false)
+  }
 
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleFilterDateChange = (event) => {
-    setFilterDate(event.target.value);
+  const handleFilterDateChange = (option) => {
+    setFilterDate(option);
+    setIsOpen1(false);
   };
 
-  const handleFilterTypeChange = (event) => {
-    setFilterType(event.target.value);
+  const handleFilterTypeChange = (option) => {
+    setFilterType(option);
+    setIsOpen2(false);
   };
 
-  const handleFilterStatusChange = (event) => {
-    setFilterStatus(event.target.value);
+  const handleFilterStatusChange = (option) => {
+    setFilterStatus(option);
+    setIsOpen3(false);
   };
 
   const handleDownload = () => {
@@ -80,6 +115,26 @@ const Activity = () => {
     return true;
   });
 
+  useEffect(() => {
+    // Add event listener to detect clicks outside of input element
+    document.addEventListener("click", handleClickOutside);
+
+    // Remove event listener when component unmounts
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (inputRef.current && !inputRef.current.contains(event.target)) {
+      setHasOutline(false);
+    }
+  };
+
+  const handleOutline = () => {
+    setHasOutline(true);
+  };
+
   return (
     <div className="main">
       <div className="filters">
@@ -89,6 +144,9 @@ const Activity = () => {
             placeholder="Search by name or email"
             value={searchTerm}
             onChange={handleSearchTermChange}
+            className={hasOutline ? "inputOutline" : ""}
+            onClick={handleOutline}
+            ref={inputRef}
           />
           <button onClick={handleDownload}>
             <RiDownload2Fill size={20} />
@@ -96,55 +154,94 @@ const Activity = () => {
         </div>
         <div className="filterBy">
           {" "}
-          <p>Filter by</p>
-          <div>
-            <select value={filterDate} onChange={handleFilterDateChange}>
-              <option value="all">All Dates</option>
-              <option value="2023-04-14">April 14, 2023</option>
-              <option value="2023-04-13">April 13, 2023</option>
-              <option value="2023-04-12">April 12, 2023</option>
-              <option value="2023-04-11">April 11, 2023</option>
-              <option value="2023-04-10">April 10, 2023</option>
-            </select>
-            <select value={filterType} onChange={handleFilterTypeChange}>
-              <option value="all">All Types</option>
-              <option value="Payment Sent">Payment Sent</option>
-              <option value="Payment Received">Payment Received</option>
-              <option value="Invoice Sent">Invoice Sent</option>
-              <option value="Invoice Received">Invoice Received</option>
-            </select>
-            <select value={filterStatus} onChange={handleFilterStatusChange}>
-              <option value="all">All Statuses</option>
-              <option value="Completed">Completed</option>
-              <option value="Pending">Pending</option>
-              <option value="Cancelled">Cancelled</option>
-              <option value="Refunded">Refunded</option>
-            </select>
+          <p className="filterText">Filter by</p>
+          <div className="allFilters">
+            <div>
+              <button onClick={handleButtonClick}>Date: {filterDate}</button>
+              {isOpen1 && (
+                <div className="options">
+                  {dateOptions.map((option) => (
+                    <div
+                      key={option}
+                      onClick={() => handleFilterDateChange(option)}
+          
+                      type="radio"
+                    >
+                      {option}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div>
+              <button onClick={handleButtonClick1}>{filterType}</button>
+              {isOpen2 && (
+                <div className="options">
+                  {typeOptions.map((option) => (
+                    <div
+                      key={option}
+                      onClick={() => handleFilterTypeChange(option)}
+                      
+                      type="radio"
+                    >
+                      {option}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <button onClick={handleButtonClick2}>{filterStatus}</button>
+              {isOpen3 && (
+                <div className="options">
+                  {statusOptions.map((option) => (
+                    <div
+                      key={option}
+                      onClick={() => handleFilterStatusChange(option)}
+                     
+                      type="radio"
+                    >
+                      {option}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      <div>
-        <p>Completed</p>
+      <div className="transactionContainer">
+        <p className="transactionStatus">Completed</p>
         <div className="month">
-          <p>Mar 2023</p>
-          {filteredTransactions.map((transaction) => 
-          <div className="transaction">
-            <div className="transactionHistory">
-              <p className="bankIcon"><BsBank size={25} /></p>
-              <div>
-                <p>{transaction.name}</p>
-                <div className="details">
-                  <p>{transaction.date}</p>
-                  {" "}
-                  <p className="dot">.</p>
-                  {" "}
-                  <p>{transaction.type}</p>
+          <p className="eachMonth">Mar 2023</p>
+          {filteredTransactions.length !== 0 ? (
+            filteredTransactions.map((transaction) => (
+              <div className="transaction">
+                <div className="transactionHistory">
+                  <p className="bankIcon">
+                    <BsBank size={25} />
+                  </p>
+                  <div className="transactionDetails">
+                    <p className="name">{transaction.name.toUpperCase()}</p>
+                    <div className="details">
+                      <p>{transaction.date}</p> <p className="dot">.</p>{" "}
+                      <p>{transaction.type}</p>
+                    </div>
+                  </div>
                 </div>
+                <p className="amount">- $300.00</p>
               </div>
+            ))
+          ) : (
+            <div className="notAvailable">
+              <p className="noTransaction">No transaction yet.</p>
+              <p className="tryAgain">
+                Want to try again with different dates?
+              </p>
             </div>
-            <p>- $300.00</p>
-          </div>)}
+          )}
         </div>
       </div>
     </div>

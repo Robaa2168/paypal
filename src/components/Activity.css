@@ -14,15 +14,55 @@
   padding: 0.6rem;
   padding-left: 1.2rem;
   font-size: 1.1rem;
+  border: 1px solid;
+  border-color: rgb(194, 186, 186);
   border-radius: 1.5rem 1.5rem;
+  
+}
+
+.inputOutline {
+  outline: 3px solid;
+  outline-color: rgb(28, 28, 196);
+  border: none;
+  box-shadow:  10px lightblue;
 }
 
 .header button {
   margin-top: auto;
   margin-bottom: auto;
-  padding: 0.2rem 0.4rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 50%;
   cursor: pointer;
+  color: rgb(28, 28, 196);
+  border: none;
+}
+
+.filterText {
+  font-weight: 400;
+}
+
+.allFilters {
+  display: flex;
+}
+
+.options {
+  z-index: 99;
+  position: fixed;
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px 5px;
+  border: 1px solid;
+  border-color: rgb(168, 160, 160);
+  box-shadow: 10px gray;
+  margin-top:  1px;
+}
+
+.transactionContainer > .transactionStatus {
+  font-weight: 700;
+}
+
+.eachMonth {
+  color: rgb(109, 106, 106);
 }
 
 .transaction {
@@ -31,7 +71,7 @@
   border: 2px solid;
   border-color: rgb(224, 220, 220);
   border-radius: 0.6rem;
-  padding: 0 0.8rem;
+  padding: 0.7rem 0.5rem;
   margin-top: 1rem;
   margin-top: 1rem;
 }
@@ -40,8 +80,20 @@
   display: flex;
 }
 
+.transactionDetails {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
+}
+
+.transactionDetails > .name {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
 .details {
   display: flex;
+  margin-top: -12px;
 }
 
 .bankIcon {
@@ -49,9 +101,30 @@
   padding: 8px 10px;
   border-radius: 50%;
   margin: auto 0.5rem;
+  background-color: rgb(138, 67, 138);
+  border-color: rgb(128, 67, 138);
+  color: white;
 }
 
 .dot {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.amount {
+  font-weight: 500;
+}
+
+.notAvailable {
+  text-align: center;
+}
+
+.notAvailable > .noTransaction {
+  font-weight: 400;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.notAvailable > .tryAgain {
+  margin-top: 4px;
 }
