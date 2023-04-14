@@ -4,11 +4,12 @@ import { RiDownload2Fill } from "react-icons/ri";
 import { BsBank } from "react-icons/bs";
 
 const Activity = () => {
+  // Sample data to use
   const [transactions, setTransactions] = useState([
     {
       id: 1,
-      name: "John Smith",
-      email: "john.smith@example.com",
+      name: "Stanley Mayore",
+      email: "stanmay@example.com",
       date: "Last 90 Days",
       type: "Payment",
       status: "Completed",
@@ -16,8 +17,8 @@ const Activity = () => {
     },
     {
       id: 2,
-      name: "Jane Doe",
-      email: "jane.doe@example.com",
+      name: "Lee Stan",
+      email: "email123@example.com",
       date: "Last 90 Days",
       type: "Payment",
       status: "Completed",
@@ -31,12 +32,13 @@ const Activity = () => {
   const [filterType, setFilterType] = useState("Type");
   const [filterStatus, setFilterStatus] = useState("Status");
   const [hasOutline, setHasOutline] = useState(false);
-
-  const [hasOutline1, setHasOutline1] = useState(false);
-  const inputRef = useRef(null);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
+  const inputRef = useRef(null);
+  const divRef = useRef(null);
+
+  // Options for date
   const dateOptions = [
     "This Month",
     "Last Month",
@@ -44,6 +46,8 @@ const Activity = () => {
     "This Year",
     "Last Year",
   ];
+
+  //Options for type
   const typeOptions = [
     "Automatic Payments",
     "Payments",
@@ -52,6 +56,8 @@ const Activity = () => {
     "Transfers",
     "Reported Transactions",
   ];
+
+  // Options for status
   const statusOptions = [
     "Incoming payments to review",
     "Tracking numbers to add",
@@ -61,39 +67,45 @@ const Activity = () => {
     "Holds",
   ];
 
+  // Handle pop up toggle for date
   function handleButtonClick() {
     setIsOpen1(!isOpen1);
     setIsOpen2(false);
     setIsOpen3(false);
-    setHasOutline1(true);
   }
 
+  // Handle pop up toggle for type
   function handleButtonClick1() {
     setIsOpen2(!isOpen2);
     setIsOpen1(false);
     setIsOpen3(false);
   }
 
+  // Handle pop up toggle for status
   function handleButtonClick2() {
     setIsOpen3(!isOpen3);
     setIsOpen2(false);
     setIsOpen1(false);
   }
 
+  // Handle input change
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // Handle Date change
   const handleFilterDateChange = (option) => {
     setFilterDate(option);
     setIsOpen1(false);
   };
 
+  // Handle type change
   const handleFilterTypeChange = (option) => {
     setFilterType(option);
     setIsOpen2(false);
   };
 
+  // Handle status change
   const handleFilterStatusChange = (option) => {
     setFilterStatus(option);
     setIsOpen3(false);
@@ -101,8 +113,9 @@ const Activity = () => {
 
   const handleDownload = () => {
     // Implement download functionality here
-  }; // You will need to implement this function
+  };
 
+  // Filter transactions
   const filteredTransactions = transactions.filter((transaction) => {
     const searchTermLowerCase = searchTerm.toLowerCase();
 
@@ -132,6 +145,7 @@ const Activity = () => {
     return true;
   });
 
+  // Handle click event for input
   useEffect(() => {
     // Add event listener to detect clicks outside of input element
     document.addEventListener("click", handleClickOutside);
@@ -144,10 +158,27 @@ const Activity = () => {
 
   const handleClickOutside = (event) => {
     if (inputRef.current && !inputRef.current.contains(event.target)) {
-      setHasOutline(false);;
+      setHasOutline(false);
     }
   };
 
+  // Handle click event for filter buttons and toggle div
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
+  const handleOutsideClick = (e) => {
+    if (divRef.current && !divRef.current.contains(e.target)) {
+      setIsOpen1(false);
+      setIsOpen2(false);
+      setIsOpen3(false);
+    }
+  };
+
+  // Handle outline for search input field
   const handleOutline = () => {
     setHasOutline(true);
   };
@@ -174,14 +205,11 @@ const Activity = () => {
           <p className="filterText">Filter by</p>
           <div className="allFilters">
             <div>
-              <button
-                onClick={handleButtonClick}
-                className="button1"
-              >
+              <button onClick={handleButtonClick} className="button1">
                 Date: {filterDate}
               </button>
               {isOpen1 && (
-                <div className="options">
+                <div className="options" ref={divRef}>
                   <p className="optionsDate">Date</p>
                   {dateOptions.map((option) => (
                     <label key={option} style={{ display: "block" }}>
@@ -194,18 +222,30 @@ const Activity = () => {
                         checked={filterDate === option}
                         className="optionsInput"
                       />
+
                       {option}
                     </label>
                   ))}
+                  <div className="choose">
+                    <p>Choose a date range</p>
+                    <div>
+                      <input type="date" placeholder="Start" />
+                      <input
+                        type="date"
+                        className="secondDate"
+                        placeholder="End"
+                      />
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
             <div>
               <button onClick={handleButtonClick1} className="button1">
-                {filterType}
+                {filterType !== "Type" ? `Type: ${filterType}` : "Type"}
               </button>
               {isOpen2 && (
-                <div className="options button2">
+                <div className="options button2" ref={divRef}>
                   <p className="optionsDate">Type</p>
                   {typeOptions.map((option) => (
                     <label key={option} style={{ display: "block" }}>
@@ -227,10 +267,12 @@ const Activity = () => {
 
             <div>
               <button onClick={handleButtonClick2} className="button1">
-                {filterStatus}
+                {filterStatus !== "Status"
+                  ? `Status: ${filterStatus}`
+                  : "Status"}
               </button>
               {isOpen3 && (
-                <div className="options">
+                <div className="options" ref={divRef}>
                   <p className="optionsDate">Status</p>
                   {statusOptions.map((option) => (
                     <label key={option} style={{ display: "block" }}>
@@ -254,9 +296,17 @@ const Activity = () => {
       </div>
 
       <div className="transactionContainer">
-        {filteredTransactions.length !== 0 ? <p className="transactionStatus">Completed</p> : <></>}
+        {filteredTransactions.length !== 0 ? (
+          <p className="transactionStatus">Completed</p>
+        ) : (
+          <></>
+        )}
         <div className="month">
-          {filteredTransactions.length !== 0 ? <p className="eachMonth">Mar 2023</p> : <></>}
+          {filteredTransactions.length !== 0 ? (
+            <p className="eachMonth">Mar 2023</p>
+          ) : (
+            <></>
+          )}
           {filteredTransactions.length !== 0 ? (
             filteredTransactions.map((transaction) => (
               <div className="transaction">

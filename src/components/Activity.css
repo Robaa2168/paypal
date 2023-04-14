@@ -1,175 +1,3 @@
-/* .main {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 20px;
-  }
-  
- .header {
-  display: flex;
-  justify-content: space-between;
- }
-
-.header input {
-  width: 90%;
-  padding: 0.6rem;
-  padding-left: 1.2rem;
-  font-size: 1.1rem;
-  border: 1px solid;
-  border-color: rgb(194, 186, 186);
-  border-radius: 1.5rem 1.5rem;
-  
-}
-
-.inputOutline {
-  outline: 3px solid;
-  outline-color: rgb(28, 28, 196);
-  border: none;
-  box-shadow:  10px lightblue;
-}
-
-.header button {
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 0.3rem 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  color: rgb(28, 28, 196);
-  border: none;
-}
-
-.filterText {
-  font-weight: 400;
-}
-
-.allFilters {
-  display: flex;
-}
-
-.button1 {
-  padding: 9px 12px;
-  border-radius: 17px;
-  font-size: 0.8rem;
-  background-color: white;
-  border: 1px solid rgb(196, 191, 191);
-  cursor: pointer;
-  color: rgb(28, 28, 196);
-
-
-}
-
-.button2 {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.button3 {
-  padding: 7px 10px;
-  border-radius: 17px;
-  font-size: 0.9rem;
-  border: 1px solid rgb(196, 191, 191);
-  cursor: pointer;
-  outline: 3px solid;
-  outline-color: rgb(28, 28, 196);
-  border: none;
-  box-shadow:  10px lightblue;
-  background-color: rgb(210, 226, 231);
-}
-
-.options {
-  z-index: 99;
-  position: fixed;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px 10px;
-  border: 1px solid;
-  border-color: rgb(214, 206, 206);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-top:  4px;
-}
-
-.optionsDate {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.optionsInput {
-  padding: 5px;
-  
-}
-
-.transactionContainer > .transactionStatus {
-  font-weight: 700;
-}
-
-.eachMonth {
-  color: rgb(109, 106, 106);
-}
-
-.transaction {
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid;
-  border-color: rgb(224, 220, 220);
-  border-radius: 0.6rem;
-  padding: 0.7rem 0.5rem;
-  margin-top: 1rem;
-  margin-top: 1rem;
-}
-
-.transactionHistory {
-  display: flex;
-}
-
-.transactionDetails {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 0.5rem;
-}
-
-.transactionDetails > .name {
-  font-weight: 700;
-  margin-bottom: 0;
-}
-
-.details {
-  display: flex;
-  margin-top: -12px;
-}
-
-.bankIcon {
-  border: 1px solid;
-  padding: 8px 10px;
-  border-radius: 50%;
-  margin: auto 0.5rem;
-  background-color: rgb(138, 67, 138);
-  border-color: rgb(128, 67, 138);
-  color: white;
-}
-
-.dot {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.amount {
-  font-weight: 500;
-}
-
-.notAvailable {
-  text-align: center;
-}
-
-.notAvailable > .noTransaction {
-  font-weight: 400;
-  margin-bottom: 0;
-  font-size: 1.5rem;
-}
-
-.notAvailable > .tryAgain {
-  margin-top: 4px;
-} */
-
-
 /* Define layout for the main container */
 .main {
   margin: 0 auto;
@@ -192,14 +20,22 @@ input[type="text"] {
   border-radius: 1.6rem;
   padding: 0.8rem 1.3rem;
   font-size: 1.1rem;
-  background-color: #F2F2F2;
+  background-color: white;
   width: 85%;
+  border: 1px solid rgb(226, 219, 219);
 }
 
 /* Style the search input when it has an outline */
-.inputOutline {
-  border: 3px solid #0079C1;
-  box-shadow: 0 0 6px #0079C1;
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #046096;
+  box-shadow: 0px 0px 5px #0079C1;
+}
+
+.inputOutline:focus {
+  outline: none;
+  border: 1px solid #046096;
+  box-shadow: 0px 0px 5px #0079C1;
 }
 
 /* Style the button for downloading transactions */
@@ -220,6 +56,7 @@ input[type="text"] {
   margin-bottom: 20px;
 }
 
+/* Style the filter's display */
 .allFilters {
   display: flex;
 }
@@ -235,11 +72,11 @@ input[type="text"] {
 button.button1 {
   display: flex;
   align-items: center;
-  background-color: #F2F2F2;
-  color: #6D6D6D;
+  background-color: white;
+  color: #0079C1;
+  border: 1px solid rgb(226, 219, 219);
   font-size: 14px;
   padding: 10px 20px;
-  border: none;
   border-radius: 20px;
   margin-right: 10px;
   cursor: pointer;
@@ -277,6 +114,31 @@ label {
 /* Style the filter option inputs */
 input[type="radio"] {
   margin-right: 10px;
+}
+
+.choose {
+  border-top: 1px solid rgb(226, 219, 219);
+  margin-top: 0.5rem;
+  padding: 8px 0;
+}
+
+input[type="date"] {
+  background-color: white;
+  color: #0079C1;
+  border: 2px solid rgb(226, 219, 219);
+  font-size: 14px;
+  padding: 10px 8px;
+  cursor: pointer;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border: 2px solid #046096;
+  box-shadow: 0px 0px 7px #0079C1;
+}
+
+.secondDate {
+  margin-left: 10px;
 }
 
 /* Style the transaction container */
@@ -391,7 +253,13 @@ input[type="radio"] {
 .button2:focus,
 .button3:focus {
   outline: none;
+  border: 1px solid #046096;
   box-shadow: 0px 0px 5px #0079C1;
+}
+
+.optionsInput::active {
+  background-color: #dceffa;
+  border: 1px solid #dceffa;
 }
 
 /* Style the scrollbar */
