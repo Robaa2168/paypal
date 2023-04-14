@@ -67,7 +67,7 @@ function Signup() {
         </div>
         <div style={{ margin: "auto" }}>
           {" "}
-          <Button colorScheme="blue" variant="ghost">
+          <Button colorScheme="blue" variant="white">
             Log In
           </Button>
         </div>
