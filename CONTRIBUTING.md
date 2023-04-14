@@ -7,10 +7,19 @@ Thank you for your interest in contributing to React-Pay! We appreciate your sup
 1. Browse the [GitHub issues](https://github.com/Robaa2168/paypal.git/issues) to find tasks that interest you. Feel free to ask questions or seek clarification on the issue thread.(+254798530725)
 
 2. Fork the repository and create a new branch with a descriptive name (e.g., `feature/add-transaction-history` or `bugfix/fix-login-issue`).
-
+2.1 Make sure you have the latest version of the repository:
+`git fetch origin
+git checkout master (or main, depending on the default branch name)
+git pull
+git checkout -b branch-name`
+2.2 
 3. Write your code, following the project's code style and best practices. Be sure to include tests and documentation as necessary.
 
 4. Commit your changes using descriptive commit messages that explain the changes made and their purpose.
+`git push -u origin branch-name`
+4.1 
+7. Go to the GitHub or GitLab repository and create a pull request from your branch to the `master` (or `main`) branch.
+
 
 5. Submit a pull request (PR) to the main repository, referencing the related issue number in the PR description.
 
