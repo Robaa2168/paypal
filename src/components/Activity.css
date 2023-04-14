@@ -1,0 +1,57 @@
+.main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  }
+  
+ .header {
+  display: flex;
+  justify-content: space-between;
+ }
+
+.header input {
+  width: 90%;
+  padding: 0.6rem;
+  padding-left: 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 1.5rem 1.5rem;
+}
+
+.header button {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0.2rem 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  border-color: rgb(224, 220, 220);
+  border-radius: 0.6rem;
+  padding: 0 0.8rem;
+  margin-top: 1rem;
+  margin-top: 1rem;
+}
+
+.transactionHistory {
+  display: flex;
+}
+
+.details {
+  display: flex;
+}
+
+.bankIcon {
+  border: 1px solid;
+  padding: 8px 10px;
+  border-radius: 50%;
+  margin: auto 0.5rem;
+}
+
+.dot {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
