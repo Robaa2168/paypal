@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "./Signup.module.css";
 import {
   Menu,
   MenuButton,
@@ -52,7 +51,7 @@ function Signup() {
               borderRadius="md"
               borderWidth="1px"
             >
-              Country <span class="glyphicon glyphicon-chevron-down"></span>
+              Country <span className="glyphicon glyphicon-chevron-down"></span>
             </MenuButton>
             <MenuList>
               <MenuItem>Kenya</MenuItem>
@@ -121,7 +120,7 @@ function Signup() {
         style={{ marginLeft: "auto", marginRight: "auto" }}
         className="text-center"
       >
-        <Text mt="350" fontSize="xl">
+        <Text mt="180" fontSize="xl">
           ©2023 PayPal Privacy Legal Contact Feedback
         </Text>
       </div>
