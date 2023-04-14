@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import { ChakraProvider } from '@chakra-ui/react'
 import Dashboard from './components/Dashboard';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Signup from './components/signup/Signup';
 import Login from './components/Login';
 import SendMoney from './components/SendMoney';
@@ -11,8 +12,9 @@ import Activity from './components/Activity';
 
 const App = () => {
   return (
+    <ChakraProvider>
     <Router>
-      <Header />
+      {/* <Header /> */}
 
       <Routes>
         <Route path="/" element={<Dashboard />} />
@@ -24,6 +26,7 @@ const App = () => {
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>
+    </ChakraProvider>
   );
 }
 
