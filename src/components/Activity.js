@@ -9,7 +9,7 @@ const Activity = () => {
       id: 1,
       name: "John Smith",
       email: "john.smith@example.com",
-      date: "3 Mar",
+      date: "Last 90 Days",
       type: "Payment",
       status: "Completed",
       amount: 125.0,
@@ -18,7 +18,7 @@ const Activity = () => {
       id: 2,
       name: "Jane Doe",
       email: "jane.doe@example.com",
-      date: "3 Mar",
+      date: "Last 90 Days",
       type: "Payment",
       status: "Completed",
       amount: 75.0,
@@ -27,10 +27,12 @@ const Activity = () => {
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterDate, setFilterDate] = useState("3 Mar");
+  const [filterDate, setFilterDate] = useState("Last 90 Days");
   const [filterType, setFilterType] = useState("Type");
   const [filterStatus, setFilterStatus] = useState("Status");
   const [hasOutline, setHasOutline] = useState(false);
+
+  const [hasOutline1, setHasOutline1] = useState(false);
   const inputRef = useRef(null);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -42,25 +44,40 @@ const Activity = () => {
     "This Year",
     "Last Year",
   ];
-  const typeOptions = ["Automatic Payments", "Payments", "Payments Received", "Refunds", "Transfers", "Reported Transactions"];
-  const statusOptions = ["Incoming payments to review", "Tracking numbers to add", "Shipping labels to print", "Payment requests to review", "Invoices to pay", "Holds"];
+  const typeOptions = [
+    "Automatic Payments",
+    "Payments",
+    "Payments Received",
+    "Refunds",
+    "Transfers",
+    "Reported Transactions",
+  ];
+  const statusOptions = [
+    "Incoming payments to review",
+    "Tracking numbers to add",
+    "Shipping labels to print",
+    "Payment requests to review",
+    "Invoices to pay",
+    "Holds",
+  ];
 
   function handleButtonClick() {
     setIsOpen1(!isOpen1);
-    setIsOpen2(false)
-    setIsOpen3(false)
+    setIsOpen2(false);
+    setIsOpen3(false);
+    setHasOutline1(true);
   }
 
   function handleButtonClick1() {
     setIsOpen2(!isOpen2);
-    setIsOpen1(false)
-    setIsOpen3(false)
+    setIsOpen1(false);
+    setIsOpen3(false);
   }
 
   function handleButtonClick2() {
     setIsOpen3(!isOpen3);
-    setIsOpen2(false)
-    setIsOpen1(false)
+    setIsOpen2(false);
+    setIsOpen1(false);
   }
 
   const handleSearchTermChange = (event) => {
@@ -95,12 +112,12 @@ const Activity = () => {
     }
 
     // Check if transaction type matches filter
-    if (filterType !== "all" && transaction.type !== filterType) {
+    if (filterType !== "Type" && transaction.type !== filterType) {
       return false;
     }
 
     // Check if transaction status matches filter
-    if (filterStatus !== "all" && transaction.status !== filterStatus) {
+    if (filterStatus !== "Status" && transaction.status !== filterStatus) {
       return false;
     }
 
@@ -127,7 +144,7 @@ const Activity = () => {
 
   const handleClickOutside = (event) => {
     if (inputRef.current && !inputRef.current.contains(event.target)) {
-      setHasOutline(false);
+      setHasOutline(false);;
     }
   };
 
@@ -157,53 +174,77 @@ const Activity = () => {
           <p className="filterText">Filter by</p>
           <div className="allFilters">
             <div>
-              <button onClick={handleButtonClick}>Date: {filterDate}</button>
+              <button
+                onClick={handleButtonClick}
+                className="button1"
+              >
+                Date: {filterDate}
+              </button>
               {isOpen1 && (
                 <div className="options">
+                  <p className="optionsDate">Date</p>
                   {dateOptions.map((option) => (
-                    <div
-                      key={option}
-                      onClick={() => handleFilterDateChange(option)}
-          
-                      type="radio"
-                    >
+                    <label key={option} style={{ display: "block" }}>
+                      <input
+                        key={option}
+                        onClick={() => handleFilterDateChange(option)}
+                        type="radio"
+                        value={option}
+                        name="option"
+                        checked={filterDate === option}
+                        className="optionsInput"
+                      />
                       {option}
-                    </div>
+                    </label>
                   ))}
                 </div>
               )}
             </div>
             <div>
-              <button onClick={handleButtonClick1}>{filterType}</button>
+              <button onClick={handleButtonClick1} className="button1">
+                {filterType}
+              </button>
               {isOpen2 && (
-                <div className="options">
+                <div className="options button2">
+                  <p className="optionsDate">Type</p>
                   {typeOptions.map((option) => (
-                    <div
-                      key={option}
-                      onClick={() => handleFilterTypeChange(option)}
-                      
-                      type="radio"
-                    >
+                    <label key={option} style={{ display: "block" }}>
+                      <input
+                        key={option}
+                        onClick={() => handleFilterTypeChange(option)}
+                        type="radio"
+                        value={option}
+                        checked={filterType === option}
+                        name="option"
+                        className="optionsInput"
+                      />
                       {option}
-                    </div>
+                    </label>
                   ))}
                 </div>
               )}
             </div>
 
             <div>
-              <button onClick={handleButtonClick2}>{filterStatus}</button>
+              <button onClick={handleButtonClick2} className="button1">
+                {filterStatus}
+              </button>
               {isOpen3 && (
                 <div className="options">
+                  <p className="optionsDate">Status</p>
                   {statusOptions.map((option) => (
-                    <div
-                      key={option}
-                      onClick={() => handleFilterStatusChange(option)}
-                     
-                      type="radio"
-                    >
+                    <label key={option} style={{ display: "block" }}>
+                      <input
+                        key={option}
+                        onClick={() => handleFilterStatusChange(option)}
+                        type="radio"
+                        value={option}
+                        checked={filterStatus === option}
+                        name="option"
+                        className="optionsInput"
+                      />
                       {option}
-                    </div>
+                    </label>
                   ))}
                 </div>
               )}
@@ -213,9 +254,9 @@ const Activity = () => {
       </div>
 
       <div className="transactionContainer">
-        <p className="transactionStatus">Completed</p>
+        {filteredTransactions.length !== 0 ? <p className="transactionStatus">Completed</p> : <></>}
         <div className="month">
-          <p className="eachMonth">Mar 2023</p>
+          {filteredTransactions.length !== 0 ? <p className="eachMonth">Mar 2023</p> : <></>}
           {filteredTransactions.length !== 0 ? (
             filteredTransactions.map((transaction) => (
               <div className="transaction">
@@ -231,7 +272,9 @@ const Activity = () => {
                     </div>
                   </div>
                 </div>
-                <p className="amount">- $300.00</p>
+                <p className="amount">
+                  - ${parseFloat(transaction.amount).toFixed(2)}
+                </p>
               </div>
             ))
           ) : (
