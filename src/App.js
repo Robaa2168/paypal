@@ -4,12 +4,11 @@ import Dashboard from "./components/Dashboard";
 import Step4 from "./components/signup/Step4";
 import Step3 from "./components/signup/Step3";
 import Step2 from "./components/signup/Step2";
-import Login from "./components/signin/Login";
+import Login from "./components/Login";
 import SendMoney from "./components/SendMoney";
 import RequestMoney from "./components/RequestMoney";
 import Activity from "./components/Activity";
 import Signup from "./components/signup/Signup";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 const App = () => {
   return (
     <ChakraProvider>
