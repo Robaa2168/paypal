@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { VStack, Heading, Text, Link } from "@chakra-ui/react";
+import { VStack, Heading, Text, Link, Stack } from "@chakra-ui/react";
 import TopLogo from "./TopLogo";
 import OptVerification from "./opt/OptVerification";
 
@@ -21,7 +21,10 @@ function Step1() {
             </a>
           </span>
         </Heading>
-        <OptVerification value={otp} valueLength={6} onChange={onChange} />
+        <Stack w="70%">
+          <OptVerification value={otp} valueLength={6} onChange={onChange} />
+        </Stack>
+
         <Link
           href="/step2"
           className="btn btn-outline-primary rounded-pill hover-light"
