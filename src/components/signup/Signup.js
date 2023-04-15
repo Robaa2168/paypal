@@ -101,16 +101,13 @@ function Signup() {
                 </p>
               </FormControl>
 
-              <Button
-                pt="8"
-                pb="8"
-                type="submit"
-                colorScheme="blue"
-                width="50%"
-                className=" rounded-pill"
+              <Link
+                href="/step1"
+                className="btn btn-primary rounded-pill hover-light"
+                w="50%"
               >
-                <Link href="/step2">Next</Link>
-              </Button>
+                Next
+              </Link>
             </VStack>
           </form>
         </Box>
