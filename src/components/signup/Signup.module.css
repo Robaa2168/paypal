@@ -1,0 +1,19 @@
+/* *{
+    font-size: x-large;
+} */
+
+.outer {
+  display: "flex";
+  flex-direction: "row";
+  padding: 3rem 1rem;
+  justify-content: center;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+.input {
+  text-align: center;
+  caret-color: transparent;
+  font-size: 1.5rem;
+  max-width: 3rem;
+  height: 3.25rem;
+}
