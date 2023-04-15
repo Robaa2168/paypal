@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import Dashboard from "./components/Dashboard";
 // import Header from './components/Header';
+import Wallet from "./components/wallet/Wallet";
 import Step1 from "./components/signup/Step1";
 import Step4 from "./components/signup/Step4";
 import Step3 from "./components/signup/Step3";
@@ -18,6 +19,7 @@ const App = () => {
         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/wallet" element={<Wallet />} />
           <Route path="/step4" element={<Step4 />} />
           <Route path="/step3" element={<Step3 />} />
           <Route path="/step2" element={<Step2 />} />

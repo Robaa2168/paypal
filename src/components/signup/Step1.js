@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { VStack, Heading, Text, Link } from "@chakra-ui/react";
+import { VStack, Heading, Text, Link, Stack } from "@chakra-ui/react";
 import TopLogo from "./TopLogo";
 import OptVerification from "./opt/OptVerification";
 
@@ -16,12 +16,15 @@ function Step1() {
         <Heading as="h6" size="md">
           Code sent to +254 720 202020{" "}
           <span>
-            <a href="./">
+            <a href="/signup">
               <i className="fas fa-edit"></i>
             </a>
           </span>
         </Heading>
-        <OptVerification value={otp} valueLength={6} onChange={onChange} />
+        <Stack w="70%">
+          <OptVerification value={otp} valueLength={6} onChange={onChange} />
+        </Stack>
+
         <Link
           href="/step2"
           className="btn btn-outline-primary rounded-pill hover-light"
@@ -30,7 +33,7 @@ function Step1() {
         >
           Verify
         </Link>
-        <a href="./">
+        <a href="/step1">
           {" "}
           <Heading as="h4" size="md" my="3" className="text-primary">
             Send code again
