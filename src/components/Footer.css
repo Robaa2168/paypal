@@ -1,0 +1,89 @@
+.main {
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.container1,
+.container2 {
+  display: flex;
+  border-top: 2px solid rgb(197, 193, 193);
+  padding: 20px 20%;
+
+  margin: 0 auto;
+}
+
+.container1 {
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px 0px 5px #b4b6b8;
+}
+
+.container1 img {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.container2 {
+  display: block;
+}
+
+.help,
+.privacy {
+  display: flex;
+  gap: 20px;
+  margin-top: auto;
+  margin-left: 50px;
+}
+
+.privacy {
+  margin-bottom: auto;
+  margin-left: 20px;
+}
+
+.paypal {
+  display: flex;
+  gap: 10px;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgb(95, 93, 93);
+}
+
+.contact {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 738px) {
+
+  .main {
+    text-align: center;
+  }
+
+  .container1,
+  .paypal {
+    display: block;
+  }
+
+  .help,
+  .privacy {
+    display: grid;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .container1,
+  .container2 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}

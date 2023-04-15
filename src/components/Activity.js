@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Activity.css";
 import { RiDownload2Fill } from "react-icons/ri";
 import { BsBank } from "react-icons/bs";
+import Footer from './Footer';
 
 const Activity = () => {
   // Sample data to use
