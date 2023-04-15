@@ -13,7 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import * as Yup from "yup";
-// import styles from "./Signup.module.css";
+import "./Signup.module.css";
 
 const Step2 = () => {
   const formik = useFormik({
@@ -46,15 +46,15 @@ const Step2 = () => {
 
   return (
     <>
-      <TopLogo />
-      <VStack w="50%" mr="auto" ml="auto">
-        <Heading as="h1">Set up your profile</Heading>
-        <Heading as="h6" size="md">
-          This info needs to be acurate
-        </Heading>
-        <Box p={6} rounded="md" w="100%">
-          <form onSubmit={formik.handleSubmit}>
-            <VStack spacing={4}>
+    <TopLogo />
+    <VStack w={{ base: "90%", md: "60%", lg: "50%" }} mx="auto">
+      <Heading as="h1">Set up your profile</Heading>
+      <Heading as="h6" size="md">
+        This info needs to be acurate
+      </Heading>
+      <Box p={6} rounded="md" w="100%" className="form-container">
+        <form onSubmit={formik.handleSubmit}>
+          <VStack spacing={4}>
               <FormControl
                 isInvalid={!!formik.errors.email && formik.touched.email}
               >
@@ -124,10 +124,7 @@ const Step2 = () => {
           </form>
         </Box>
       </VStack>
-      <div
-        style={{ marginLeft: "auto", marginRight: "auto" }}
-        className="text-center"
-      >
+      <div className="footer text-center">
         <Text mt="230" fontSize="xl">
           ©2023 PayPal Privacy Legal Contact Feedback
         </Text>
