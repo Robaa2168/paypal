@@ -209,7 +209,7 @@ const Activity = () => {
                 Date: {filterDate}
               </button>
               {isOpen1 && (
-                <div className="options" ref={divRef}>
+                <div className="options" id="options3" ref={divRef}>
                   <p className="optionsDate">Date</p>
                   {dateOptions.map((option) => (
                     <label key={option} style={{ display: "block" }}>
@@ -240,7 +240,7 @@ const Activity = () => {
                 </div>
               )}
             </div>
-            <div>
+            <div id="hide">
               <button onClick={handleButtonClick1} className="button1">
                 {filterType !== "Type" ? `Type: ${filterType}` : "Type"}
               </button>
@@ -265,7 +265,7 @@ const Activity = () => {
               )}
             </div>
 
-            <div>
+            <div id="hide">
               <button onClick={handleButtonClick2} className="button1">
                 {filterStatus !== "Status"
                   ? `Status: ${filterStatus}`

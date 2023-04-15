@@ -288,35 +288,37 @@ input[type="date"]:focus {
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
-  input[type="text"] {
-    width: 100%;
+
+  .main {
+    padding: 12px;
   }
 
-  .filters {
-    flex-direction: column-reverse;
+  input[type="text"] {
+    width: 70%;
   }
 
   .filterText {
     margin-bottom: 10px;
   }
 
-  .allFilters {
+  #hide {
+    display: none;
+  }
+
+  #options3 {
+    width: 88%;
+  }
+
+  input[type="date"] {
     display: flex;
     flex-wrap: wrap;
+    width: 90%;
+    margin: 5px auto;
   }
 
-  button.button1 {
-    margin-bottom: 10px;
-  }
+  .secondDate {
+    margin-left: 0;
 
-  .options {
-    position: static;
-    flex-direction: column;
-    box-shadow: none;
-  }
-
-  .optionsDate {
-    display: none;
   }
 
   label {
