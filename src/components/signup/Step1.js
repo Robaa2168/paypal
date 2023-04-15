@@ -16,7 +16,7 @@ function Step1() {
         <Heading as="h6" size="md">
           Code sent to +254 720 202020{" "}
           <span>
-            <a href="./">
+            <a href="/signup">
               <i className="fas fa-edit"></i>
             </a>
           </span>
@@ -30,7 +30,7 @@ function Step1() {
         >
           Verify
         </Link>
-        <a href="./">
+        <a href="/step1">
           {" "}
           <Heading as="h4" size="md" my="3" className="text-primary">
             Send code again

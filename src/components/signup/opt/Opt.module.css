@@ -1,17 +1,51 @@
 .otpGroup {
-    display: flex;
-    width: 100%;
-    max-width: 360px;
-    column-gap: 10px;
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  column-gap: 10px;
+}
+
+.otpInput {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@media (max-width: 575.98px) {
+  .otpGroup {
+    flex-direction: column;
+    max-width: 100%;
   }
-  
+
   .otpInput {
-    width: 100%;
-    height: 60px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 1;
+    margin-bottom: 10px;
   }
+}
+
+@media (min-width: 576px) {
+  .otpGroup {
+    column-gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .otpGroup {
+    max-width: 480px;
+  }
+}
+@media (min-width: 992px) {
+  .otpGroup {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .otpGroup {
+    max-width: 960px;
+  }
+}
