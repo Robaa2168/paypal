@@ -20,7 +20,7 @@ html, body {
   font-size: 20px;
 }
 
-.dashboard {
+.dashboardheader {
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
