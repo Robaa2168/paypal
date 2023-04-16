@@ -1,345 +1,341 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./Activity.css";
-import { RiDownload2Fill } from "react-icons/ri";
-import { BsBank } from "react-icons/bs";
-import Footer from './Footer';
+/* Define layout for the main container */
+.main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
 
-const Activity = () => {
-  // Sample data to use
-  const [transactions, setTransactions] = useState([
-    {
-      id: 1,
-      name: "Stanley Mayore",
-      email: "stanmay@example.com",
-      date: "Last 90 Days",
-      type: "Payment",
-      status: "Completed",
-      amount: 125.0,
-    },
-    {
-      id: 2,
-      name: "Lee Stan",
-      email: "email123@example.com",
-      date: "Last 90 Days",
-      type: "Payment",
-      status: "Completed",
-      amount: 75.0,
-    },
-    // Add more transactions as needed
-  ]);
+/* Style the header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filterDate, setFilterDate] = useState("Last 90 Days");
-  const [filterType, setFilterType] = useState("Type");
-  const [filterStatus, setFilterStatus] = useState("Status");
-  const [hasOutline, setHasOutline] = useState(false);
-  const [isOpen1, setIsOpen1] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
-  const inputRef = useRef(null);
-  const divRef = useRef(null);
+/* Style the search input */
+input[type="text"] {
+  border: none;
+  border-radius: 1.6rem;
+  padding: 0.8rem 1.3rem;
+  font-size: 1.1rem;
+  background-color: white;
+  width: 85%;
+  border: 1px solid rgb(226, 219, 219);
+}
 
-  // Options for date
-  const dateOptions = [
-    "This Month",
-    "Last Month",
-    "Last 90 Days",
-    "This Year",
-    "Last Year",
-  ];
+/* Style the search input when it has an outline */
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #046096;
+  box-shadow: 0px 0px 5px #0079C1;
+}
 
-  //Options for type
-  const typeOptions = [
-    "Automatic Payments",
-    "Payments",
-    "Payments Received",
-    "Refunds",
-    "Transfers",
-    "Reported Transactions",
-  ];
+.inputOutline:focus {
+  outline: none;
+  border: 1px solid #046096;
+  box-shadow: 0px 0px 5px #0079C1;
+}
 
-  // Options for status
-  const statusOptions = [
-    "Incoming payments to review",
-    "Tracking numbers to add",
-    "Shipping labels to print",
-    "Payment requests to review",
-    "Invoices to pay",
-    "Holds",
-  ];
+/* Style the button for downloading transactions */
+.header button {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: rgb(28, 28, 196);
+  border: none;
+}
 
-  // Handle pop up toggle for date
-  function handleButtonClick() {
-    setIsOpen1(!isOpen1);
-    setIsOpen2(false);
-    setIsOpen3(false);
+/* Style the filters container */
+.filters {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Style the filter's display */
+.allFilters {
+  display: flex;
+}
+
+/* Style the filter header */
+.filterText {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Style the filter buttons */
+button.button1 {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #0079C1;
+  border: 1px solid rgb(226, 219, 219);
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Style the filter buttons when they are open */
+button.button3,
+button.button2 {
+  background-color: #0079C1;
+  color: #FFFFFF;
+}
+
+/* Style the filter button options */
+.options {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 7px;
+  z-index: 99;
+  text-align: left; /* Add this line to align text to the left */
+}
+
+
+/* Style the filter option labels */
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: left; /* Add this line to align text to the left */
+}
+
+/* Style the filter option inputs */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.choose {
+  border-top: 1px solid rgb(226, 219, 219);
+  margin-top: 0.5rem;
+  padding: 8px 0;
+}
+
+input[type="date"] {
+  background-color: white;
+  color: #0079C1;
+  border: 2px solid rgb(226, 219, 219);
+  font-size: 14px;
+  padding: 10px 8px;
+  cursor: pointer;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border: 2px solid #046096;
+  box-shadow: 0px 0px 7px #0079C1;
+}
+
+.secondDate {
+  margin-left: 10px;
+}
+
+/* Style the transaction container */
+.transactionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the transaction status */
+.transactionStatus {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left; /* Add this line to align left */
+}
+
+/* Style the month */
+.month {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  
+}
+
+/* Style each transaction */
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid;
+  border-color: rgb(224, 220, 220);
+  border-radius: 0.6rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  padding: 0.7rem 0.8rem;
+  margin-top: 1rem;
+  margin-top: 1rem;
+}
+
+/* Style the transaction history */
+.transactionHistory {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the bank icon */
+.bankIcon {
+  background-color: rgb(138, 67, 138);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: auto 0.7rem;
+}
+
+/* Style the transaction details */
+.transactionDetails {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Style the transaction name */
+.name {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style the transaction details text */
+.details {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #6D6D6D;
+}
+
+/* Style the dot between transaction details */
+.dot {
+  margin: 0 10px;
+}
+
+/* Style the transaction amount */
+.amount {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Style the not available message */
+.notAvailable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Style the no transaction message */
+.noTransaction {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Style the try again message */
+.tryAgain {
+  margin-top: 1px;
+  color: #6D6D6D;
+}
+
+/* Style the outline for the filter button when it's clicked */
+.button1:focus,
+.button2:focus,
+.button3:focus {
+  outline: none;
+  border: 1px solid #046096;
+  box-shadow: 0px 0px 5px #0079C1;
+}
+
+.optionsInput::active {
+  background-color: #dceffa;
+  border: 1px solid #dceffa;
+}
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0079C1;
+  border-radius: 20px;
+}
+
+/* Style the options when the scrollbar is activated */
+.options::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF;
+}
+
+/* Style the options when there is no scrollbar */
+.options:not(:hover)::-webkit-scrollbar-thumb {
+  background-color: #F2F2F2;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+
+  .main {
+    padding: 12px;
   }
 
-  // Handle pop up toggle for type
-  function handleButtonClick1() {
-    setIsOpen2(!isOpen2);
-    setIsOpen1(false);
-    setIsOpen3(false);
+  .eachMonth {
+    text-align: left;
   }
 
-  // Handle pop up toggle for status
-  function handleButtonClick2() {
-    setIsOpen3(!isOpen3);
-    setIsOpen2(false);
-    setIsOpen1(false);
+  input[type="text"] {
+    width: 95%; /* Decrease the percentage value to bring it closer to the magnifying glass icon */
   }
 
-  // Handle input change
-  const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  .filterText {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left; /* Add this line to align left */
+  }
+  #hide {
+    display: none;
+  }
 
-  // Handle Date change
-  const handleFilterDateChange = (option) => {
-    setFilterDate(option);
-    setIsOpen1(false);
-  };
+  #options3 {
+    width: 88%;
+  }
 
-  // Handle type change
-  const handleFilterTypeChange = (option) => {
-    setFilterType(option);
-    setIsOpen2(false);
-  };
+  input[type="date"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 5px auto;
+  }
 
-  // Handle status change
-  const handleFilterStatusChange = (option) => {
-    setFilterStatus(option);
-    setIsOpen3(false);
-  };
+  .secondDate {
+    margin-left: 0;
 
-  const handleDownload = () => {
-    // Implement download functionality here
-  };
+  }
 
-  // Filter transactions
-  const filteredTransactions = transactions.filter((transaction) => {
-    const searchTermLowerCase = searchTerm.toLowerCase();
-
-    // Check if transaction date matches filter
-    if (filterDate !== "all" && transaction.date !== filterDate) {
-      return false;
-    }
-
-    // Check if transaction type matches filter
-    if (filterType !== "Type" && transaction.type !== filterType) {
-      return false;
-    }
-
-    // Check if transaction status matches filter
-    if (filterStatus !== "Status" && transaction.status !== filterStatus) {
-      return false;
-    }
-
-    // Check if transaction name or email matches search term
-    if (
-      !transaction.name.toLowerCase().includes(searchTermLowerCase) &&
-      !transaction.email.toLowerCase().includes(searchTermLowerCase)
-    ) {
-      return false;
-    }
-
-    return true;
-  });
-
-  // Handle click event for input
-  useEffect(() => {
-    // Add event listener to detect clicks outside of input element
-    document.addEventListener("click", handleClickOutside);
-
-    // Remove event listener when component unmounts
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
-  const handleClickOutside = (event) => {
-    if (inputRef.current && !inputRef.current.contains(event.target)) {
-      setHasOutline(false);
-    }
-  };
-
-  // Handle click event for filter buttons and toggle div
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
-
-  const handleOutsideClick = (e) => {
-    if (divRef.current && !divRef.current.contains(e.target)) {
-      setIsOpen1(false);
-      setIsOpen2(false);
-      setIsOpen3(false);
-    }
-  };
-
-  // Handle outline for search input field
-  const handleOutline = () => {
-    setHasOutline(true);
-  };
-
-  return (
-    <div className="main">
-      <div className="filters">
-        <div className="header">
-          <input
-            type="text"
-            placeholder="Search by name or email"
-            value={searchTerm}
-            onChange={handleSearchTermChange}
-            className={hasOutline ? "inputOutline" : ""}
-            onClick={handleOutline}
-            ref={inputRef}
-          />
-          <button onClick={handleDownload}>
-            <RiDownload2Fill size={20} />
-          </button>
-        </div>
-        <div className="filterBy">
-          {" "}
-          <p className="filterText">Filter by</p>
-          <div className="allFilters">
-            <div>
-              <button onClick={handleButtonClick} className="button1">
-                Date: {filterDate}
-              </button>
-              {isOpen1 && (
-                <div className="options" id="options3" ref={divRef}>
-                  <p className="optionsDate">Date</p>
-                  {dateOptions.map((option) => (
-                    <label key={option} style={{ display: "block" }}>
-                      <input
-                        key={option}
-                        onClick={() => handleFilterDateChange(option)}
-                        type="radio"
-                        value={option}
-                        name="option"
-                        checked={filterDate === option}
-                        className="optionsInput"
-                      />
-
-                      {option}
-                    </label>
-                  ))}
-                  <div className="choose">
-                    <p>Choose a date range</p>
-                    <div>
-                      <input type="date" placeholder="Start" />
-                      <input
-                        type="date"
-                        className="secondDate"
-                        placeholder="End"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-            <div id="hide">
-              <button onClick={handleButtonClick1} className="button1">
-                {filterType !== "Type" ? `Type: ${filterType}` : "Type"}
-              </button>
-              {isOpen2 && (
-                <div className="options button2" ref={divRef}>
-                  <p className="optionsDate">Type</p>
-                  {typeOptions.map((option) => (
-                    <label key={option} style={{ display: "block" }}>
-                      <input
-                        key={option}
-                        onClick={() => handleFilterTypeChange(option)}
-                        type="radio"
-                        value={option}
-                        checked={filterType === option}
-                        name="option"
-                        className="optionsInput"
-                      />
-                      {option}
-                    </label>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <div id="hide">
-              <button onClick={handleButtonClick2} className="button1">
-                {filterStatus !== "Status"
-                  ? `Status: ${filterStatus}`
-                  : "Status"}
-              </button>
-              {isOpen3 && (
-                <div className="options" ref={divRef}>
-                  <p className="optionsDate">Status</p>
-                  {statusOptions.map((option) => (
-                    <label key={option} style={{ display: "block" }}>
-                      <input
-                        key={option}
-                        onClick={() => handleFilterStatusChange(option)}
-                        type="radio"
-                        value={option}
-                        checked={filterStatus === option}
-                        name="option"
-                        className="optionsInput"
-                      />
-                      {option}
-                    </label>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="transactionContainer">
-        {filteredTransactions.length !== 0 ? (
-          <p className="transactionStatus">Completed</p>
-        ) : (
-          <></>
-        )}
-        <div className="month">
-          {filteredTransactions.length !== 0 ? (
-            <p className="eachMonth">Mar 2023</p>
-          ) : (
-            <></>
-          )}
-          {filteredTransactions.length !== 0 ? (
-            filteredTransactions.map((transaction) => (
-              <div className="transaction">
-                <div className="transactionHistory">
-                  <p className="bankIcon">
-                    <BsBank size={25} />
-                  </p>
-                  <div className="transactionDetails">
-                    <p className="name">{transaction.name.toUpperCase()}</p>
-                    <div className="details">
-                      <p>{transaction.date}</p> <p className="dot">.</p>{" "}
-                      <p>{transaction.type}</p>
-                    </div>
-                  </div>
-                </div>
-                <p className="amount">
-                  - ${parseFloat(transaction.amount).toFixed(2)}
-                </p>
-              </div>
-            ))
-          ) : (
-            <div className="notAvailable">
-              <p className="noTransaction">No transaction yet.</p>
-              <p className="tryAgain">
-                Want to try again with different dates?
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Activity;
+  label {
+    margin-bottom: 5px;
+  }
+}
