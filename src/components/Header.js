@@ -18,7 +18,7 @@ const Header = () => {
       <div
         className="navbar"
         style={{
-          left: toggle ? "60%" : "0",
+          transform: toggle ? "translateX(60%)" : "translateX(0)",
           transition: "all 0.3s",
         }}
       >

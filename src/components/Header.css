@@ -1,3 +1,8 @@
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -132,7 +137,19 @@
     display: block;
   }
 
-  .settings1, .logout {
+  .settings1,
+  .logout {
     display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    justify-content: center;
+  }
+  
+  .dashboard {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
