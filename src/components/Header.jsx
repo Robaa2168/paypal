@@ -28,10 +28,8 @@ const Header = () => {
           <RxCross2 className="sideMenu" onClick={handleToggle} />
         )}
 
-        <div className="dashboard">
-          <Link>
-            <img src="/paypal123.png" alt="paypalLogo" id="logo1" />
-          </Link>
+        <div className="dashboardheader">
+     
           <div className="navLinks">
             <Link to="#" className="navLink">
               Dashboard
