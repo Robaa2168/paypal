@@ -302,7 +302,7 @@ const Activity = () => {
               <div className="transaction">
                 <div className="transactionHistory">
                   <p className="bankIcon">
-                    <BsBank size={25} />
+                    <BsBank size={22} />
                   </p>
                   <div className="transactionDetails">
                     <p className="name">{transaction.name.toUpperCase()}</p>
