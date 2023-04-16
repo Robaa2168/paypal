@@ -1,103 +1,97 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FaBars, FaBell, FaCog, FaTimes } from 'react-icons/fa'
-import './Header.css'
+import React, { useState } from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
+import { IoNotifications } from "react-icons/io5";
+import { RiSettings5Fill } from "react-icons/ri";
+import { SlMenu } from "react-icons/sl";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
 
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  function handleToggle() {
+    setToggle(!toggle);
+  }
 
   return (
-    <header className='header-section'>
-      <div className='hamburger-menu'>
-        <FaBars onClick={() => setShowMobileMenu(true)} />
-      </div>
-      <div className='logo'>
-        <img src="./paypal2.png" alt="paypal logo" />
-      </div>
-      {/* mobile-notification-icon */}
-      <span className='nav-item__mobile'>
-            <Link className='link__mobile notifications notifications__mobile' to="/">
-              <FaBell />
-              <span className='notification-badge'>2</span>
+    <div>
+      <div
+        className="navbar"
+        style={{
+          transform: toggle ? "translateX(60%)" : "translateX(0)",
+          transition: "all 0.3s",
+        }}
+      >
+        {!toggle ? (
+          <SlMenu className="sideMenu" onClick={handleToggle} />
+        ) : (
+          <RxCross2 className="sideMenu" onClick={handleToggle} />
+        )}
+
+        <div className="dashboard">
+          <Link>
+            <img src="/paypal123.png" alt="paypalLogo" id="logo1" />
+          </Link>
+          <div className="navLinks">
+            <Link to="#" className="navLink">
+              Dashboard
             </Link>
-      </span>
-      {/* desktop menu */}
-      <nav className='navbar-nav desktop-navigation' role="navigation">
-        <ul className="navbar-primary">
-          <li className="nav-item">
-            <Link to="/" className='link active'>Dashboard</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className='link' id='send-money'>Send and Request</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className='link'>Wallet</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className='link'>Activity</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className='link'>Help</Link>
-          </li>
-        </ul>
-        <ul className="navbar-secondary">
-          <li className='nav-item'>
-            <Link className='link notifications' to="/">
-              <FaBell />
-              <span className='notification-badge'>2</span>
+            <Link to="#" className="navLink">
+              Send and Request
             </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to="/" className='link'>
-              <FaCog />
+            <Link to="#" className="navLink">
+              Wallet
             </Link>
-          </li>
-          <div className="nav-item">
-            <Link to="/" className='link'>
-              LOG OUT
+            <Link to="#" className="navLink">
+              Activity
+            </Link>
+            <Link to="#" className="navLink">
+              Help
             </Link>
           </div>
-        </ul>
-      </nav>
-
-      {/* mobile menu */}
-      {showMobileMenu && <aside className='mobile-navigation'>
-        <div className="settings">
-          <span>LOG OUT</span>
-          <span><FaCog /></span>
         </div>
-        <div className="user-info">
-          <span className="avatar">H</span>
-          <span className="username">Hamisi Kandy</span>
+        <div className="logOut">
+          <IoNotifications className="settings" />
+          <Link to="" className="settings1">
+            <RiSettings5Fill className="settings" />
+          </Link>
+          <Link className="logout">LOG OUT</Link>
         </div>
-        {/* menu */}
-        <nav className='mobile-menu'>
-        <ul className="navigation-mobile">
-          <li className="nav-item__mobile">
-            <Link to="/" className='link__mobile active'>Dashboard</Link>
-          </li>
-          <li className="nav-item__mobile">
-            <Link to="/" className='link__mobile' id='send-money'>Send and Request</Link>
-          </li>
-          <li className="nav-item__mobile">
-            <Link to="/" className='link__mobile'>Wallet</Link>
-          </li>
-          <li className="nav-item__mobile">
-            <Link to="/" className='link__mobile'>Activity</Link>
-          </li>
-          <li className="nav-item__mobile">
-            <Link to="/" className='link__mobile'>Help</Link>
-          </li>
-        </ul>
-        </nav>
-        {showMobileMenu && <div className='close-btn'>
-          <FaTimes onClick={() => setShowMobileMenu(false)} />
-        </div>}
-      </aside>}
+      </div>
+      {toggle ? (
+        <div className="popUp">
+          <div className="popUp1">
+            <Link className="popUp2">LOG OUT</Link>
+            <Link to="" className="popUp2">
+              <RiSettings5Fill className="" />
+            </Link>
+          </div>
 
-    </header>
-  )
-}
+          <p className="popUpP">Stanley Mayore</p>
 
-export default Header
+          <div className="popLinks">
+            <Link to="#" className="popLink">
+              Dashboard
+            </Link>
+            <Link to="#" className="popLink">
+              Send and Request
+            </Link>
+            <Link to="#" className="popLink">
+              Wallet
+            </Link>
+            <Link to="#" className="popLink">
+              Activity
+            </Link>
+            <Link to="#" className="popLink">
+              Help
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
+
+export default Header;
