@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { IoNotifications } from "react-icons/io5";
 import { RiSettings5Fill } from "react-icons/ri";
 import { SlMenu } from "react-icons/sl";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
+
+  function handleToggle() {
+    setToggle(!toggle);
+  }
+
   return (
     <div>
-      <div className="navbar">
-        <SlMenu className="sideMenu" />
+      <div
+        className="navbar"
+        style={{
+          left: toggle ? "60%" : "0",
+          transition: "all 0.3s",
+        }}
+      >
+        {!toggle ? (
+          <SlMenu className="sideMenu" onClick={handleToggle} />
+        ) : (
+          <RxCross2 className="sideMenu" onClick={handleToggle} />
+        )}
 
         <div className="dashboard">
           <Link>
@@ -41,34 +58,38 @@ const Header = () => {
           <Link className="logout">LOG OUT</Link>
         </div>
       </div>
-      <div className="popUp">
-        <div className="popUp1">
-          <Link className="popUp2">LOG OUT</Link>
-          <Link to="" className="popUp2">
-            <RiSettings5Fill className="" />
-          </Link>
-        </div>
+      {toggle ? (
+        <div className="popUp">
+          <div className="popUp1">
+            <Link className="popUp2">LOG OUT</Link>
+            <Link to="" className="popUp2">
+              <RiSettings5Fill className="" />
+            </Link>
+          </div>
 
-        <p className="popUpP">Stanley Mayore</p>
+          <p className="popUpP">Stanley Mayore</p>
 
-        <div className="popLinks">
-          <Link to="#" className="popLink">
-            Dashboard
-          </Link>
-          <Link to="#" className="popLink">
-            Send and Request
-          </Link>
-          <Link to="#" className="popLink">
-            Wallet
-          </Link>
-          <Link to="#" className="popLink">
-            Activity
-          </Link>
-          <Link to="#" className="popLink">
-            Help
-          </Link>
+          <div className="popLinks">
+            <Link to="#" className="popLink">
+              Dashboard
+            </Link>
+            <Link to="#" className="popLink">
+              Send and Request
+            </Link>
+            <Link to="#" className="popLink">
+              Wallet
+            </Link>
+            <Link to="#" className="popLink">
+              Activity
+            </Link>
+            <Link to="#" className="popLink">
+              Help
+            </Link>
+          </div>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

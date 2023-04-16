@@ -6,6 +6,7 @@
   background-color: #045286;
   padding: 20px 20%;
   font-family: Arial, sans-serif;
+  position: relative;
 }
 
 .sideMenu {
@@ -67,15 +68,19 @@
 
 .popUp {
   left: 0;
-  padding: 30px;
-  height: 100vh;
-  width: 50%;
+  padding: 4% 0;
+  height: 100%;
+  width: 60%;
   background-color: #045286;
+  top: 0;
+  position: absolute;
 }
 
 .popUp1 {
   display: flex;
   justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .popUpP {
@@ -98,18 +103,26 @@
   color: #a1c7f1;
   text-decoration: none;
   font-size: 20px;
-  padding: 10px 0;
+  padding: 10px 6%;
+  border-top: 1px solid #045286;
+  border-bottom: 1px solid #045286;
+}
+
+.popLink:hover {
+  border-top: 1px solid #a1c7f1;
+  border-bottom: 1px solid #a1c7f1;
 }
 
 @media (max-width: 768px) {
 
   .navbar {
-    padding: 4%;
+    padding: 3%;
+    overflow-x: hidden;
   }
 
-  /* .sideMenu {
+  .sideMenu {
     display: block;
-  } */
+  }
 
   .navLinks {
     display: none;
