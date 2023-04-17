@@ -285,15 +285,37 @@
   }
 
   .profile,
-.address {
-  width: 100%;
+  .address {
+    width: 100%;
+  }
+
+  .profileDetails,
+  .profileId,
+  .addressEmail,
+  .addressNumber,
+  .addressAddress {
+    margin-bottom: 8px;
+  }
+
+  .profileId {
+    margin-top: 0;
+  }
 }
 
-.profileDetails, .profileId, .addressEmail, .addressNumber, .addressAddress {
-  margin-bottom: 8px;
+@media (min-width: 993px) {
+  .main {
+    padding: 20px 5%;
+  }
 }
 
-.profileId {
-  margin-top: 0;
+@media (min-width: 1280px) {
+  .main {
+    padding: 20px 10%;
+  }
 }
+
+@media (min-width: 1536px) {
+  .main {
+    padding: 20px 20%;
+  }
 }
