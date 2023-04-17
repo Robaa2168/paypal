@@ -21,6 +21,8 @@
 .joined {
   border-bottom: 1px solid #e0e0e0;
   padding: 10px 20px;
+  background-color: rgb(14, 14, 141);
+  border-radius: 5px 5px 0 0;
 }
 
 .dateJoined {
@@ -28,22 +30,36 @@
   justify-content: space-between;
 }
 
+.dateJoined1 {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.dateJoined2 {
+  color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 0.8rem;
+}
+
 .userImage {
-  border: 1px solid red;
+  border: 1px solid gray;
   width: 60px;
   height: 60px;
   padding: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   border-radius: 50%;
-  margin-bottom: -0px;
+  margin-bottom: -40px;
+  background-color: gray;
 }
 
 .profileName {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 20px 20px 10px 20px;
 }
 
 .profileId {
@@ -185,7 +201,7 @@
   color: rgb(23, 23, 211);
   font-weight: 600;
   background-color: rgb(209, 209, 236);
-  width: 20%;
+  width: 70px;
   text-align: center;
   padding: 2px 4px;
   border-radius: 20px;
@@ -260,4 +276,24 @@
   font-weight: 600;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+@media (max-width: 992px) {
+  .main {
+    padding: 0;
+    display: block;
+  }
+
+  .profile,
+.address {
+  width: 100%;
+}
+
+.profileDetails, .profileId, .addressEmail, .addressNumber, .addressAddress {
+  margin-bottom: 8px;
+}
+
+.profileId {
+  margin-top: 0;
+}
 }

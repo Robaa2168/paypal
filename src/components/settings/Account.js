@@ -82,8 +82,8 @@ function Account() {
         <div className="profileDetails">
           <div className="joined">
             <div className="dateJoined">
-              <p>Profile</p>
-              <p>Joined in 2019</p>
+              <p className="dateJoined1">Profile</p>
+              <p className="dateJoined2">Joined in 2019</p>
             </div>
             <p className="userImage">Image</p>
           </div>
