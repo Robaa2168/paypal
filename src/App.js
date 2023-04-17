@@ -8,6 +8,7 @@ import Login from './components/Login';
 import SendMoney from './components/SendMoney';
 import RequestMoney from './components/RequestMoney';
 import Activity from './components/Activity';
+import Settings from './components/settings/Settings';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/send-money" element={<SendMoney />} />
         <Route path="/request-money" element={<RequestMoney />} />
         <Route path="/activity" element={<Activity />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>
