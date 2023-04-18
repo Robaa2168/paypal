@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Security.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import PasswordModal from "./modals/PasswordModal";
 
 function Security() {
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  function toggleModal() {
+    setModalVisible(!modalVisible);
+  }
+
   return (
     <div className="container">
-      <Link to="" className="main1">
+      <Link to="" className="main1" onClick={toggleModal} >
         <div className="main2">
           <p className="headers">Password</p>
           <p className="create">Create or update your password.</p>
@@ -63,6 +71,8 @@ function Security() {
           <FontAwesomeIcon className="update-icon" icon={faEdit} />
         </Link>
       </Link>
+
+      <PasswordModal isVisible={modalVisible} onClose={toggleModal} />
     </div>
   );
 }
