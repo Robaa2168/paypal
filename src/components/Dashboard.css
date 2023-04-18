@@ -3,7 +3,7 @@
     justify-content: space-between;
     width: 100%;
     overflow: hidden;
-    padding-top: 6rem;
+    /* padding-top: 6rem; */
     background-color: var(--bg) !important;
     /* width: 70rem; */
     /* border: 1px solid red; */
@@ -27,6 +27,7 @@
 
 .cards-container .card-balance-card {
     margin-bottom: 3rem;
+    position: relative;
 }
 
 .pypl-card {
@@ -71,10 +72,33 @@
     border-radius: 50%;
     display: inline-flex;
     padding: 1rem;
+    position: relative;
 }
 
 .pypl-icon-container:hover {
     background-color: #faf8f5;
+}
+
+.pypl-popup {
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 60%;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.pypl-popup ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.pypl-popup ul > * {
+    margin-bottom: 1em;
 }
 
 
