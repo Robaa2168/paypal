@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/send-money" element={<SendMoney />} />
         <Route path="/request-money" element={<RequestMoney />} />
         <Route path="/activity" element={<Activity />} />
-        <Route path="/settings/profile" element={<Settings />} />
+        <Route path="/settings/security" element={<Settings />} />
         
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
