@@ -11,6 +11,8 @@ import RequestMoney from "./components/RequestMoney";
 import Activity from "./components/Activity";
 import Signup from "./components/signup/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SendPreview from "./components/sendPreview/SendPreview";
+import RequestPreview from "./components/requestPreview/RequestPreview";
 const App = () => {
   return (
     <ChakraProvider>
@@ -25,7 +27,9 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/send-money" element={<SendMoney />} />
+          <Route path="/send-money/preview" element={<SendPreview />} />
           <Route path="/request-money" element={<RequestMoney />} />
+          <Route path="request-money/preview" element={<RequestPreview />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>

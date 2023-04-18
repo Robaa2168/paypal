@@ -1,0 +1,174 @@
+.send-money-container {
+    margin-top: calc(96px * 2);
+    padding-top: 36px;
+    display: flex;
+    justify-content: center;
+    margin-left: 25vw;
+}
+
+.input-search-container {
+    flex: 1;
+    width: 100%;
+}
+
+.send-ways {
+    flex: 1;
+    width: 100%;
+}
+
+input {
+    overflow: visible !important;
+    letter-spacing: 0.025em !important;   
+}
+
+.pypl-search {
+    border: 1px solid #909191;
+    border-radius: 4rem !important;
+    color: #0c0c0d;
+    outline: none;
+    overflow-wrap: break-word;
+    padding: 2.75rem 2.75rem 2.75rem 4.75rem !important;
+    height: 4rem;
+    width: 100%;
+    font-size: 16px !important;
+}
+
+.pypl-search::placeholder {
+    color: #000;
+    font-size: 16px;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.search-icon {
+    position: absolute;
+    font-size: 16px;
+    top: 1.95rem;
+    left: 1.75rem;
+}
+
+.close-icon-container {
+    position: absolute;
+    top: 1rem;
+    right: 9.75rem;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.contact-badge {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    border: 1px solid #909191;
+    position: absolute;
+    top: 0.5em;
+    left: 3.5em;
+    background: #fff;
+    padding: 0.3em;
+    border-radius: 1.5em;
+}
+
+.avatar {
+    padding: 1rem;
+    background-color: #d7d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.searched-contacts {
+    border: 1px solid #d7d9d9;
+    position: absolute;
+    width: 80%;
+    margin-top: 1.5rem;
+    z-index: 2;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact {
+    list-style-type: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+
+.close-icon-container:hover {
+    background: #909191;
+    transition: o.3s ease-in-out;
+}
+
+.next-btn {
+    padding: 1.5rem;
+    background-color: #d7d9d9;
+    border: 2px solid #909191;
+    color: #fff;
+    border-radius: 3rem;
+    font-size: 16px;
+    width: 20%;
+    cursor: pointer;
+}
+
+
+.invoice-container {
+    display: flex;
+    font-size: 16px !important;
+}
+
+.invoice-container .icon-container {
+    padding: 1rem;
+    color: var(--pay-blue);
+    background-color: #faf8f5;
+    margin-right: 16px;
+    font-size: 16px;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info h5 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #000;
+    max-width: 15em;
+}
+
+
+@media screen and (max-width: 767px) {
+    .send-money-container {
+        flex-direction: column;
+        margin-left: 1em;
+    }
+
+    .search-container {
+        margin-bottom: 42px;
+    }
+
+    .pypl-search {
+        width: 100% !important;
+    }
+    
+    .close-icon-container {
+        right: 1.5rem;
+    }
+
+    .next-btn {
+        display: none;
+    }
+}
