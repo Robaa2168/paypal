@@ -4,13 +4,29 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import PasswordModal from "./modals/PasswordModal";
+import VerificationModal from "./modals/VerificationModal";
 
 function Security() {
 
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible1, setModalVisible1] = useState(true);
+  const [modalVisible2, setModalVisible2] = useState(false);
+  const [modalVisible3, setModalVisible3] = useState(false);
 
   function toggleModal() {
     setModalVisible(!modalVisible);
+  }
+
+  function toggleModal1() {
+    setModalVisible1(!modalVisible1);
+  }
+
+  function toggleModal2() {
+    setModalVisible2(!modalVisible2);
+  }
+
+  function toggleModal3() {
+    setModalVisible3(!modalVisible3);
   }
 
   return (
@@ -27,7 +43,7 @@ function Security() {
         </Link>
       </Link>
 
-      <Link className="main1">
+      <Link className="main1" onClick={toggleModal1} >
         <div className="main2">
           <p className="headers">2-step verification</p>
           <p className="create">
@@ -42,7 +58,7 @@ function Security() {
         </Link>
       </Link>
 
-      <Link className="main1">
+      <Link className="main1"  onClick={toggleModal2} >
         <div className="main2">
           <p className="headers">Auto login</p>
           <p className="create">
@@ -57,7 +73,7 @@ function Security() {
         </Link>
       </Link>
 
-      <Link className="main1">
+      <Link className="main1"  onClick={toggleModal3} >
         <div className="main2">
           <p className="headers">Security questions</p>
           <p className="create">
@@ -73,6 +89,7 @@ function Security() {
       </Link>
 
       <PasswordModal isVisible={modalVisible} onClose={toggleModal} />
+      <VerificationModal isVisible={modalVisible1} onClose={toggleModal1} />
     </div>
   );
 }
