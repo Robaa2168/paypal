@@ -8,9 +8,7 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-  verificationMethod: Yup.string().required(
-    ""
-  ),
+  verificationMethod: Yup.string().required(""),
 });
 
 function VerificationModal({ isVisible, onClose }) {

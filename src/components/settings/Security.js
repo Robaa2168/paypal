@@ -6,9 +6,9 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import PasswordModal from "./modals/PasswordModal";
 import VerificationModal from "./modals/VerificationModal";
 import AutoLoginModal from "./modals/AutoLoginModal";
+import QuestionsModal from "./modals/QuestionsModal";
 
 function Security() {
-
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
   const [modalVisible2, setModalVisible2] = useState(false);
@@ -32,7 +32,7 @@ function Security() {
 
   return (
     <div className="container">
-      <Link to="" className="main1" onClick={toggleModal} >
+      <Link to="" className="main1" onClick={toggleModal}>
         <div className="main2">
           <p className="headers">Password</p>
           <p className="create">Create or update your password.</p>
@@ -44,7 +44,7 @@ function Security() {
         </Link>
       </Link>
 
-      <Link className="main1" onClick={toggleModal1} >
+      <Link className="main1" onClick={toggleModal1}>
         <div className="main2">
           <p className="headers">2-step verification</p>
           <p className="create">
@@ -59,7 +59,7 @@ function Security() {
         </Link>
       </Link>
 
-      <Link className="main1"  onClick={toggleModal2} >
+      <Link className="main1" onClick={toggleModal2}>
         <div className="main2">
           <p className="headers">Auto login</p>
           <p className="create">
@@ -74,7 +74,7 @@ function Security() {
         </Link>
       </Link>
 
-      <Link className="main1"  onClick={toggleModal3} >
+      <Link className="main1" onClick={toggleModal3}>
         <div className="main2">
           <p className="headers">Security questions</p>
           <p className="create">
@@ -92,6 +92,7 @@ function Security() {
       <PasswordModal isVisible={modalVisible} onClose={toggleModal} />
       <VerificationModal isVisible={modalVisible1} onClose={toggleModal1} />
       <AutoLoginModal isVisible={modalVisible2} onClose={toggleModal2} />
+      <QuestionsModal isVisible={modalVisible3} onClose={toggleModal3} />
     </div>
   );
 }
