@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar, Heading, Badge, Flex, Link } from "@chakra-ui/react";
+import AddCurrencyModal from "./AddCurrencyModal";
 
 function Currency({ image, name, amount, sign }) {
   return (
@@ -21,18 +22,10 @@ function Currency({ image, name, amount, sign }) {
         <Heading as="h3" size="sm" ml="10%">
           {sign} {amount}
         </Heading>
-        <Link ml="20">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-three-dots-vertical"
-            viewBox="0 0 16 16"
-          >
-            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-          </svg>
-        </Link>
+        <span className="mb-3" style={{ marginLeft: 10 + "%", }}>
+          {" "}
+          {<AddCurrencyModal />}
+        </span>
       </Flex>
     </Flex>
   );

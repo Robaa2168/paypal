@@ -30,7 +30,7 @@ function Wallet() {
                   "left right"
                   `}
       gridTemplateRows={"35% 1fr 7%"}
-      gridTemplateColumns={"1fr 1fr"}
+      gridTemplateColumns={"50% 50%"}
       gap={{ base: 2, md: 4 }}
       fontWeight="bold"
     >
