@@ -1,33 +1,5 @@
-// import React from "react";
-// import { Avatar, Heading, Badge } from "@chakra-ui/react";
-
-// function Currency({ image, name, amount, sign }) {
-//   return (
-//     <div class="container w-50 p-2">
-//       <div class="row">
-//         <div class="col-2 float-start">
-//           <Avatar src={image} />
-//         </div>
-//         <div class="col">
-//           {" "}
-//           <Heading>
-//             {name} <Badge colorScheme="blue">PRIMARY</Badge>
-//           </Heading>{" "}
-//         </div>
-//         <div class="col float-end">
-//           <Heading>
-//             {sign} {amount}
-//           </Heading>{" "}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Currency;
-
 import React from "react";
-import { Avatar, Heading, Badge, Flex } from "@chakra-ui/react";
+import { Avatar, Heading, Badge, Flex, Link } from "@chakra-ui/react";
 
 function Currency({ image, name, amount, sign }) {
   return (
@@ -41,7 +13,6 @@ function Currency({ image, name, amount, sign }) {
         src={image}
         mr={{ base: "0", md: "2" }}
         mb={{ base: "2", md: "0" }}
-       
       />
       <Flex direction="row" flex="1">
         <Heading as="h2" size="md" mb="1" mr="5%">
@@ -50,6 +21,18 @@ function Currency({ image, name, amount, sign }) {
         <Heading as="h3" size="sm" ml="10%">
           {sign} {amount}
         </Heading>
+        <Link ml="20">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-three-dots-vertical"
+            viewBox="0 0 16 16"
+          >
+            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+          </svg>
+        </Link>
       </Flex>
     </Flex>
   );
