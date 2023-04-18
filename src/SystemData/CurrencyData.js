@@ -4,7 +4,7 @@ export default [
     name: "EUR",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUaAx6WhcK3GREbBLbSvHy6EgRGTz-myQduQ&usqp=CAU",
-    sign: "#",
+    sign: "$",
     amount: 133.0,
   },
   {
