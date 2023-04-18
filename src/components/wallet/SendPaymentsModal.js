@@ -133,7 +133,7 @@ function SendPaymentsModal() {
       <Button
         onClick={onOpen}
         className="btn-primary rounded-pill btn-lg"
-        w={{ base: "100%", sm: "auto" }}
+        w={{ base: "80%", sm: "auto" }}
         m={{ base: "0 auto", sm: "0" }}
         p={{ base: "0 auto", sm: "auto" }}
         pb="8"

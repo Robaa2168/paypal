@@ -9,15 +9,11 @@ import {
   Button,
   FormControl,
   FormLabel,
-  Input,
-  Card,
-  CardBody,
   ModalFooter,
 } from "@chakra-ui/react";
 
 function AddCurrencyModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const initialRef = React.useRef(null);
 
   return (
     <>

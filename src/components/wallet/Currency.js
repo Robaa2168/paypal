@@ -1,14 +1,16 @@
 import React from "react";
-import { Avatar, Heading, Badge, Flex, Link } from "@chakra-ui/react";
+import { Avatar, Heading, Badge, Flex } from "@chakra-ui/react";
 import AddCurrencyModal from "./AddCurrencyModal";
+import styles from "./Wallet.module.css";
 
 function Currency({ image, name, amount, sign }) {
   return (
     <Flex
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: "row", md: "row",sm:"row" }}
       align="center"
       w="40%"
       p="2"
+
     >
       <Avatar
         src={image}
@@ -22,7 +24,7 @@ function Currency({ image, name, amount, sign }) {
         <Heading as="h3" size="sm" ml="10%">
           {sign} {amount}
         </Heading>
-        <span className="mb-3" style={{ marginLeft: 10 + "%", }}>
+        <span className="mb-3" style={{ marginLeft: 10 + "%" }}>
           {" "}
           {<AddCurrencyModal />}
         </span>

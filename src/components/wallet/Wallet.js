@@ -12,7 +12,6 @@ import {
   Heading,
   Stack,
   Button,
-  GridItem,
   VStack,
   Center,
   HStack,
@@ -47,14 +46,18 @@ function Wallet() {
             >
               <LogoCard />
 
-              <Stack>
-                <CardBody>
+              <Stack className={styles.paymentCard}>
+                <CardBody className={styles.paymentCardBody}>
                   <Heading>PayPal Balance</Heading>
                   <Heading size="md">$ 0.00 Available</Heading>
                 </CardBody>
 
                 <CardFooter>
-                  <Button variant="solid" colorScheme="blue">
+                  <Button
+                    variant="solid"
+                    colorScheme="blue"
+                    className={styles.paymentCardBody}
+                  >
                     PREFFERED
                   </Button>
                 </CardFooter>
@@ -82,11 +85,11 @@ function Wallet() {
           </Center>
           <VStack>{render}</VStack>
           <Center>
-            <HStack>
-              <Link href="./" color="blue">
+            <HStack className={styles.linkToCurrency}>
+              <Link href="./" color="blue" className={styles.link1}>
                 <Heading pl={{ base: 2, md: 15 }}> Add a currency</Heading>
               </Link>
-              <Link href="./" color="blue">
+              <Link href="./" color="blue" className={styles.link2}>
                 <Heading pl={{ base: 2, md: 15 }}>Curency Calculator</Heading>
               </Link>
             </HStack>

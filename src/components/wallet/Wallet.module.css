@@ -1,4 +1,3 @@
-
 .item1 {
   grid-area: header;
   background-color: blue;
@@ -15,7 +14,6 @@
 .item4 {
   grid-area: footer;
 }
-
 
 .gridContainer {
   display: grid;
@@ -62,5 +60,33 @@
       "footer";
     grid-template-rows: auto;
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .paymentCard {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+  .paymentCardBody {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .linkToCurrency {
+    display: grid;
+    grid-template-areas:
+      "link1 link1"
+      "link2 link2";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .link1 {
+    grid-area: link1;
+  }
+
+  .link2 {
+    grid-area: link2;
   }
 }
