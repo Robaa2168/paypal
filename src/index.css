@@ -27,13 +27,12 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
-  /* border: 1px solid red !important; */
+  font-family: 'Roboto', sans-serif !important;
+  box-sizing: border-box !important;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 ul {
@@ -41,7 +40,7 @@ ul {
 }
 
 body {
- background-color: var(--bg);
- font-size: 16px;
+ /* background-color: var(--bg) !important; */
+ font-size: 16px!important;
 }
 

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Activity.css";
 import { RiDownload2Fill } from "react-icons/ri";
 import { BsBank } from "react-icons/bs";
-import Footer from './Footer';
 
 const Activity = () => {
   // Sample data to use
@@ -227,17 +226,7 @@ const Activity = () => {
                       {option}
                     </label>
                   ))}
-                  <div className="choose">
-                    <p>Choose a date range</p>
-                    <div>
-                      <input type="date" placeholder="Start" />
-                      <input
-                        type="date"
-                        className="secondDate"
-                        placeholder="End"
-                      />
-                    </div>
-                  </div>
+                 
                 </div>
               )}
             </div>
@@ -313,7 +302,7 @@ const Activity = () => {
               <div className="transaction">
                 <div className="transactionHistory">
                   <p className="bankIcon">
-                    <BsBank size={25} />
+                    <BsBank size={22} />
                   </p>
                   <div className="transactionDetails">
                     <p className="name">{transaction.name.toUpperCase()}</p>
