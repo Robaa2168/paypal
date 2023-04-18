@@ -4,7 +4,8 @@ import './SendPreview.css'
 
 const SendPreview = () => {
 
-    const [price, setPrice] = useState("0.00")
+    const [price, setPrice] = useState("0.00");
+    const [textAreaActive, setTextAreaActive] = useState(false);
 
     const handlePriceChange = (e) => {
         setPrice(e.target.value);
@@ -38,7 +39,16 @@ const SendPreview = () => {
             </div>
 
             <div className="reason-input">
-                <textarea name="" placeholder="+ What's this payment for?" id="" cols="30" rows="10"></textarea>
+                {textAreaActive && <label htmlFor="">What's this payment for?</label>}
+                <textarea
+                    name=""
+                    placeholder={!textAreaActive && "+ What's this payment for?"}
+                    id=""
+                    cols="30"
+                    rows="5"
+                    onFocus={() => setTextAreaActive(true)}
+                    
+                ></textarea>
             </div>
         </div>
 

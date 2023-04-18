@@ -149,6 +149,8 @@
     appearance: none;
     resize: none;
     appearance: text-field;
+    background: none;
+    padding-top: 20px;
     
 }
 
@@ -201,8 +203,24 @@
 /* responsiveness */
 
 @media screen and (max-width: 767px) {
+    .request-preview-section {
+        background-color: #f5faf7;
+    }
+
     .request-preview-card {
-        width: 80vw;
+        width: 100vw;
         padding: 3rem;
+        border: none;
+        border-radius: 0px;
+        margin-top: 4rem;
+        background: #fff;
+    }
+
+    .other-details p {
+        text-align: center;
+    }
+
+    .user-details .avatar-container {
+        display: none;
     }
 }
