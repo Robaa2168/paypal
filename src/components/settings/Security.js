@@ -5,11 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import PasswordModal from "./modals/PasswordModal";
 import VerificationModal from "./modals/VerificationModal";
+import AutoLoginModal from "./modals/AutoLoginModal";
 
 function Security() {
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [modalVisible1, setModalVisible1] = useState(true);
+  const [modalVisible1, setModalVisible1] = useState(false);
   const [modalVisible2, setModalVisible2] = useState(false);
   const [modalVisible3, setModalVisible3] = useState(false);
 
@@ -90,6 +91,7 @@ function Security() {
 
       <PasswordModal isVisible={modalVisible} onClose={toggleModal} />
       <VerificationModal isVisible={modalVisible1} onClose={toggleModal1} />
+      <AutoLoginModal isVisible={modalVisible2} onClose={toggleModal2} />
     </div>
   );
 }
