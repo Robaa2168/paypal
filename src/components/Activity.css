@@ -66,6 +66,7 @@ input[type="text"]:focus {
   margin-right: 10px;
   font-size: 16px;
   font-weight: bold;
+  text-align: left;
 }
 
 /* Style the filter buttons */
@@ -101,7 +102,9 @@ button.button2 {
   padding: 10px;
   margin-top: 7px;
   z-index: 99;
+  text-align: left; /* Add this line to align text to the left */
 }
+
 
 /* Style the filter option labels */
 label {
@@ -109,6 +112,7 @@ label {
   align-items: center;
   margin-bottom: 10px;
   cursor: pointer;
+  text-align: left; /* Add this line to align text to the left */
 }
 
 /* Style the filter option inputs */
@@ -152,12 +156,15 @@ input[type="date"]:focus {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: left; /* Add this line to align left */
 }
 
 /* Style the month */
 .month {
   display: flex;
   flex-direction: column;
+  align-items: left;
+  
 }
 
 /* Style each transaction */
@@ -197,11 +204,12 @@ input[type="date"]:focus {
 .transactionDetails {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 /* Style the transaction name */
 .name {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -221,7 +229,7 @@ input[type="date"]:focus {
 
 /* Style the transaction amount */
 .amount {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -293,14 +301,20 @@ input[type="date"]:focus {
     padding: 12px;
   }
 
+  .eachMonth {
+    text-align: left;
+  }
+
   input[type="text"] {
-    width: 70%;
+    width: 95%; /* Decrease the percentage value to bring it closer to the magnifying glass icon */
   }
 
   .filterText {
-    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left; /* Add this line to align left */
   }
-
   #hide {
     display: none;
   }
