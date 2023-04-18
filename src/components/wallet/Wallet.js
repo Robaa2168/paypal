@@ -3,6 +3,7 @@ import LogoCard from "./cards/LogoCard";
 import LinkToYourCard from "./cards/LinkToYourCard";
 import Currency from "./Currency";
 import CurrencyData from "../../SystemData/CurrencyData";
+import SendPaymentsModal from "./SendPaymentsModal";
 import {
   Card,
   CardBody,
@@ -87,9 +88,7 @@ function Wallet() {
             <Heading>Estimated total of all currencies</Heading>
           </Center>
           <Center>
-            <button className="btn btn-primary rounded-pill btn-lg">
-              Send Payments
-            </button>
+            <SendPaymentsModal />
           </Center>
           <VStack>{render}</VStack>
           <Center>
