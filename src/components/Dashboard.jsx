@@ -7,16 +7,24 @@ import './Dashboard.css';
 const Dashboard = () => {
   
   const [showMore, setShowMore] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <main className='dashboard'>
       <section className='cards-container'>
-        <Link to="/" className="pypl-card card-balance-card">
+        <div className="pypl-card card-balance-card">
           <div className="pypl-card-header">
             <h3>PayPal balance</h3>
             <div className="pypl-icon-container">
-              <FaEllipsisV className='pypl-balance-icon' />
+              <FaEllipsisV onClick={() => setShowPopup(!showPopup)} className='pypl-balance-icon' />
             </div>
+            {showPopup && <div className="pypl-popup">
+              <ul>
+                <Link to="/wallet">Go to Paypal balance</Link>
+                <Link to="/wallet">Manage currencies</Link>
+                <Link to="/">Get help</Link>
+              </ul>
+            </div>}
           </div>
           <div className="pypl-card-body">
             <h1 className='pypl-balance'>$0.00</h1>
@@ -25,7 +33,7 @@ const Dashboard = () => {
           <div className="pypl-card-footer">
             <button className='pypl-primary-btn'>Transfer funds</button>
           </div>
-        </Link>
+        </div>
 
         <div className="pypl-card activity-card">
           <div className="pypl-card-header">
