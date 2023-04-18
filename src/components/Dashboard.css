@@ -1,0 +1,474 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    /* padding-top: 6rem; */
+    background-color: var(--bg) !important;
+    /* width: 70rem; */
+    /* border: 1px solid red; */
+}
+
+
+
+/* @media (max-width: 420px) {
+    .dashboard {
+        justify-content: left;
+    }
+} */
+
+.cards-container {
+    padding-top: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16rem;
+}
+
+.cards-container .card-balance-card {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.pypl-card {
+    border-radius: 1.25rem;
+    width: 35em;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 0.0625rem solid rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.pypl-card.card-balance-card:hover {
+    transition: 0.30s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-decoration: none !important;
+}
+
+.card-balance-card .pypl-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-bottom: 0.75rem; */
+    font-weight: 400;
+    font-size: 1.125rem;
+}
+
+.card-balance-card .pypl-card-body {
+    color: #001435;
+    /* margin-bottom: .75rem; */
+}
+
+.card-balance-card .pypl-card-body .pypl-balance {
+    font-size: 3.75rem;
+    font-weight: 400;
+    /* margin-bottom: 0.75rem; */
+}
+
+.pypl-icon-container {
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    padding: 1rem;
+    position: relative;
+}
+
+.pypl-icon-container:hover {
+    background-color: #faf8f5;
+}
+
+.pypl-popup {
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 60%;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.pypl-popup ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.pypl-popup ul > * {
+    margin-bottom: 1em;
+}
+
+
+.card-balance-card .pypl-card-footer {
+    margin: 16px 0;
+}
+
+.card-balance-card .pypl-card-footer .pypl-primary-btn {
+    border-radius: 1000px;
+    color: #fff;;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    background-color: #003087;
+    border: 1px solid #003087;
+    /* font-size: 0.875rem; */
+    line-height: 1.25rem;
+    font-weight: 700;
+    /* padding: 0.35rem 0.975rem; */
+    padding: 1rem;
+    min-width: 3.75rem;
+}
+
+.card-balance-card .pypl-card-footer .pypl-primary-btn:hover {
+    background-color: #0070e0;
+    border: 1px solid #0070e0;
+    transition: color 0.60s ease;
+}
+
+
+
+.activity-card .heading {
+    font-weight: 400;
+}
+
+.activity-card p {
+    padding: 0.75rem;
+}
+
+.activity-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity {
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 0.75rem;
+    padding: 1.375rem;
+    margin-bottom: 1.75rem;
+}
+
+.activity .activity-icon {
+    font-size: 1.25rem;
+    color: var(--white);
+    background-color: var(--berry);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    margin-right: 1em;
+}
+
+.activity-icon .icon {
+    margin: 10px;
+}
+
+.activity-card .pypl-card-body {
+    margin-top: 1.5rem;
+}
+
+.activity-info {
+    width: 100%;
+}
+
+.activity-info .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.header .activity-name {
+    font-size: 20px;
+}
+
+.header .payment {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.activity-card .show-all {
+    color: #0070e0;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 400 !important;
+}
+
+.activity-card .show-all:hover {
+    text-decoration: underline;
+}
+
+/* sidebar */
+
+.desktop-sidebar {
+    /* position: absolute;
+    right: 0;
+    top: 6rem; */
+    background-color: #fff;
+    justify-content: right;
+    height: 110vh;
+    padding: 3rem 2.75rem 10.75rem 2.75rem;
+    width: 42%;
+    display: block;
+    justify-content: right;
+}
+
+.buttons-container {
+    display: flex;
+    margin-bottom: 32.5px;
+    width: 70%;
+}
+
+.buttons-container :first-child {
+    margin-right: 10px;
+}
+
+.pypl-secondary-btn {
+    background-color: #ffd149;
+    border: 1px solid #ffd140;
+    text-align: center;
+    color: #003087;
+    border-radius: 1000px;
+    display: inline-block;
+    font-weight: 700;
+    min-width: 6rem;
+    line-height: 30px;
+    /* font-size: 1.125rem !important; */
+    padding: 0.625rem 1.875rem;
+    cursor: pointer;
+    flex: 1;
+}
+
+.kebab-menu-container {
+    margin-bottom: 18px;
+}
+
+
+.kebab-menu-container button{
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kebab-menu-container button .icon-container {
+    border: 1px solid #faf8f5;
+    background-color: #faf8f5;
+    border-radius: 50%;
+    display: inline-flex;
+    padding: 16px;
+}
+
+.kebab-menu-container button .icon-container:hover {
+    text-decoration: underline;
+}
+
+.kebab-menu-container button .pypl-icon {
+    color: #003087;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+
+.kebab-menu-container .more-info {
+    margin-top: 16px;
+}
+
+.links-container {
+    margin-bottom: 48px;
+}
+
+.hidden-dropdown {
+    transition: 0.4s ease-in-out;
+}
+
+.hidden-dropdown ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden-dropdown-item {
+    margin-bottom: 18px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hidden-dropdown-item .dropdown-link:hover {
+    text-decoration: underline;
+}
+
+.hidden-dropdown-item .icon-container {
+    background-color: #faf8f5;
+    padding: 16px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.hidden-dropdown-item .icon-container:hover {
+    background-color: #edecec;
+    transition: 0.3s ease-in-out;
+}
+
+.banks-and-cards {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.banks-and-cards .pypl-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.banks-and-cards .pypl-header h4 {
+    font-weight: 700;
+}
+
+.banks-and-cards .pypl-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem
+}
+
+.banks-and-cards .pypl-body span {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.banks-and-cards .pypl-body p {
+    font-size: 18px;
+    display: flex;
+    color: #000;
+}
+
+.banks-and-cards .pypl-footer {
+    color: #0070e0;;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.banks-and-cards .pypl-footer:hover {
+    color: #003087;
+    transition: 0.3s ease-in-out;
+    text-decoration: underline !important;
+}
+
+
+/* responsiveness */
+
+@media screen and (max-width: 767px) {
+    .desktop-sidebar {
+        display: none;
+        /* border: 1px solid red; */
+    }
+
+    .dashboard {
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .cards-container {
+        margin: 0;
+        padding-left: 3rem;
+    }
+
+    .pypl-card {
+        max-width: 90vw;
+    }
+
+    .card-balance-card .pypl-card-header {
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+    }
+
+    .card-balance-card .pypl-card-body .balance {
+        font-size: 1.75rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+    }
+
+    .pypl-card-footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pypl-primary-btn {
+        width: 85%;
+    }
+
+    .banks-and-cards__mobile {
+        width: 100%;
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+
+    }
+    
+    .banks-and-cards__mobile .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+    
+    .banks-and-cards__mobile .body {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1.5rem
+    }
+    
+    .banks-and-cards__mobile .body span {
+        margin-right: 10px;
+        font-size: 25px;
+    }
+    
+    .banks-and-cards__mobile .body p {
+        font-size: 18px;
+        display: flex;
+        justify-content: right;
+    }
+    
+    .banks-and-cards__mobile .footer {
+        color: #003087;
+        cursor: pointer;
+    }
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px ) {
+
+    .dashboard {
+        justify-content: center;        
+    }
+
+    .cards-container {
+        margin: 0;
+    }
+
+    .desktop-sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+}

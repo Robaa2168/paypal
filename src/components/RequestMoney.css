@@ -1,0 +1,263 @@
+.send-money-container {
+    margin-top: calc(96px * 2);
+    padding-top: 36px;
+    display: flex;
+    justify-content: center;
+    margin-left: 25vw;
+}
+
+.input-search-container {
+    width: 90% !important;
+    /* border: 1px solid red; */
+}
+
+.intro-header {
+    margin-bottom: 32px;
+}
+
+.intro-header p {
+    font-size: 16px !important;
+    color: #000;
+    margin-top: 10px;
+}
+
+.contact-count {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 6vw;
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+.contacts-icon-container {
+    margin-right: 10px;
+}
+
+.new-search-container {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    border: 1px solid #909191;
+    border-radius: 4rem;
+    padding: 1rem 1rem 1rem 4.75rem !important;
+    flex-wrap: wrap;
+    border: 1px solid blue;
+}
+
+.auto-complete-contacts {
+    display: flex;
+    align-self: start !important;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-height: 109px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.pypl-input {
+    flex: 1 1 content;
+    float: left;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.pypl-input input {
+    display: flex;
+    font-size: 16px !important;
+    outline: none !important;
+    color: #0c0c0d;
+    border: none !important;
+
+}
+
+.pypl-input input:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.pypl-contact-badge {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    border: 1px solid #909191;
+    background: #fff;
+    padding: 0.3em;
+    border-radius: 1.5em;
+    margin-right: 10px;
+}
+
+.pypl-search-icon {
+    position: absolute;
+    font-size: 16px;
+    top: 2.5rem;
+    left: 1.75rem;
+}
+
+.pypl-close-icon-container {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.input-search-container {
+    flex: 1;
+    width: 100%;
+}
+
+.send-ways {
+    flex: 1;
+    width: 100%;
+}
+
+input {
+    overflow: visible !important;
+    letter-spacing: 0.025em !important;
+}
+
+
+
+.pypl-search {
+    border: 1px solid #909191;
+    border-radius: 4rem !important;
+    color: #0c0c0d;
+    outline: none;
+    overflow-wrap: break-word;
+    padding: 2.75rem 2.75rem 2.75rem 4.75rem !important;
+    height: 4rem;
+    width: 100%;
+    font-size: 16px !important;
+}
+
+.pypl-search::placeholder {
+    color: #000;
+    font-size: 16px;
+}
+
+.pypl-search:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.avatar {
+    padding: 1rem;
+    background-color: #d7d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.searched-contacts {
+    border: 1px solid #d7d9d9;
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
+    width: 100% !important;
+    margin-top: 1.5rem;
+    z-index: 2;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.searched-contacts h5 {
+    font-weight: 700;
+}
+
+.contact {
+    list-style-type: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+
+.close-icon-container:hover {
+    background: #909191;
+    transition: o.3s ease-in-out;
+}
+
+.next-btn {
+    padding: 1.5rem;
+    background-color: #d7d9d9;
+    border: 2px solid #909191;
+    color: #fff;
+    border-radius: 3rem;
+    font-size: 16px;
+    width: 20%;
+    cursor: pointer;
+}
+
+
+.invoice-container {
+    display: flex;
+    font-size: 16px !important;
+}
+
+.invoice-container .icon-container {
+    padding: 1rem;
+    color: var(--pay-blue);
+    background-color: #faf8f5;
+    margin-right: 16px;
+    font-size: 16px;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info h5 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #000;
+    max-width: 15em;
+}
+
+
+@media screen and (max-width: 767px) {
+    .send-money-container {
+        flex-direction: column;
+        margin-left: 1em;
+    }
+
+    .new-search-container {
+        margin-bottom: 42px;
+        width: 100%;
+    }
+
+    .pypl-search {
+        width: 100% !important;
+    }
+    
+    .close-icon-container {
+        right: 1.5rem;
+    }
+
+    .next-btn {
+        display: none;
+    }
+}
