@@ -45,8 +45,28 @@
   text-decoration: underline;
 }
 
+.update-text {
+  display: inline;
+}
+
+.update-icon {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 959px) {
+  .update-text {
+    display: none;
+  }
+
+  .update-icon {
+    display: inline;
+    font-size: 1rem;
+    color: black;
   }
 }

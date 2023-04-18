@@ -1,17 +1,22 @@
 import React from "react";
 import "./Security.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Security() {
   return (
     <div className="container">
-      
       <Link to="" className="main1">
         <div className="main2">
           <p className="headers">Password</p>
           <p className="create">Create or update your password.</p>
         </div>
-        <Link className="update">Update</Link>
+        <Link className="update">
+          {" "}
+          <span className="update-text">Update</span>
+          <FontAwesomeIcon className="update-icon" icon={faEdit} />
+        </Link>
       </Link>
 
       <Link className="main1">
@@ -22,7 +27,11 @@ function Security() {
             security code in addition to your password each time you log in.
           </p>
         </div>
-        <Link className="update">Set Up</Link>
+        <Link className="update">
+          {" "}
+          <span className="update-text">Set Up</span>
+          <FontAwesomeIcon className="update-icon" icon={faEdit} />
+        </Link>
       </Link>
 
       <Link className="main1">
@@ -33,7 +42,11 @@ function Security() {
             login on your browsers and devices, including One Touch™
           </p>
         </div>
-        <Link className="update">Update</Link>
+        <Link className="update">
+          {" "}
+          <span className="update-text">Update</span>
+          <FontAwesomeIcon className="update-icon" icon={faEdit} />
+        </Link>
       </Link>
 
       <Link className="main1">
@@ -44,7 +57,11 @@ function Security() {
             we can verify it's really you if there's ever a doubt.
           </p>
         </div>
-        <Link className="update">Create</Link>
+        <Link className="update">
+          {" "}
+          <span className="update-text">Create</span>
+          <FontAwesomeIcon className="update-icon" icon={faEdit} />
+        </Link>
       </Link>
     </div>
   );
