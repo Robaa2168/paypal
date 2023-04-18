@@ -4,6 +4,7 @@ import LinkToYourCard from "./cards/LinkToYourCard";
 import Currency from "./Currency";
 import CurrencyData from "../../SystemData/CurrencyData";
 import SendPaymentsModal from "./SendPaymentsModal";
+import styles from "./Wallet.module.css";
 import {
   Card,
   CardBody,
@@ -11,7 +12,6 @@ import {
   Heading,
   Stack,
   Button,
-  Grid,
   GridItem,
   VStack,
   Center,
@@ -25,19 +25,9 @@ function Wallet() {
   ));
 
   return (
-    <Grid
-      templateAreas={`"header header"
-                  "left right"
-                  `}
-      gridTemplateRows={"35% 1fr 7%"}
-      gridTemplateColumns={"50% 50%"}
-      gap={{ base: 2, md: 4 }}
-      fontWeight="bold"
-    >
-      <GridItem pl="2" bg="blue" area={"header"}>
-        Header
-      </GridItem>
-      <GridItem pl="2" area={"left"} m={{ base: 2, md: 5 }}>
+    <div className={styles.gridContainer}>
+      <div className={styles.item1}>Header</div>
+      <div className={styles.item2}>
         <VStack spacing={6} align="stretch">
           <Center>
             <LinkToYourCard />
@@ -72,8 +62,8 @@ function Wallet() {
             </Card>
           </Center>
         </VStack>
-      </GridItem>
-      <GridItem pl="2" area={"right"}>
+      </div>
+      <div className={styles.item3}>
         <VStack spacing={6} align="stretch">
           <Center>
             <LogoCard />
@@ -102,8 +92,9 @@ function Wallet() {
             </HStack>
           </Center>
         </VStack>
-      </GridItem>
-    </Grid>
+      </div>
+      <div className={styles.item4}></div>
+    </div>
   );
 }
 

@@ -1,0 +1,136 @@
+/* .item1 {
+  grid-area: header;
+  background-color: blue;
+}
+.item2 {
+  grid-area: left;
+}
+.item3 {
+  grid-area: right;
+}
+.item4 {
+  grid-area: footer;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "left right"
+    "footer footer";
+  gap: 10px;
+  grid-template-rows: 35% 1fr 7%;
+  grid-template-columns: 1fr 1fr;
+} */
+/* Default styles */
+
+/* step2 */
+.item1 {
+  grid-area: header;
+  background-color: blue;
+}
+
+.item2 {
+  grid-area: left;
+}
+
+.item3 {
+  grid-area: right;
+}
+
+.item4 {
+  grid-area: footer;
+}
+
+/* .gridContainer {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "left right"
+    "footer footer";
+  gap: 10px;
+  grid-template-rows: 35% 1fr 7%;
+  grid-template-columns: 1fr 1fr;
+} */
+
+/* Media queries for responsive layout */
+/* @media screen and (max-width: 768px) {
+  .gridContainer {
+    grid-template-areas:
+      "header header"
+      "left left"
+      "right right"
+      "footer footer";
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 1fr;
+  }
+} */
+
+/* @media screen and (max-width: 480px) {
+  .gridContainer {
+    grid-template-areas:
+      "header"
+      "left"
+      "right"
+      "footer";
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  } */
+
+/* .item1 {
+    font-size: 1.5em;
+  } */
+
+/* .item2,
+  .item3 {
+    font-size: 1.2em;
+  } */
+/* }  */
+
+.gridContainer {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "left right"
+    "footer footer";
+  gap: 10px;
+  grid-template-rows: 35% 1fr 7%;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+  .gridContainer {
+    grid-template-areas:
+      "header header"
+      "left left"
+      "right right"
+      "footer footer";
+    grid-template-rows: 13% 40% 40% 7%;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* For screens larger than 768px */
+@media (min-width: 768px) {
+  .gridContainer {
+    grid-template-areas:
+      "header header"
+      "left right"
+      "footer footer";
+    grid-template-rows: 35% 1fr 7%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gridContainer {
+    grid-template-areas:
+      "header"
+      "left"
+      "right"
+      "footer";
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+}
