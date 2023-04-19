@@ -4,6 +4,8 @@ import { FaUser } from 'react-icons/fa'
 
 const RequestPreview = () => {
 
+    const [textAreaActive, setTextAreaActive] = useState(false);
+
     const [price, setPrice] = useState("0.00")
 
     const handlePriceChange = (e) => {
@@ -47,7 +49,15 @@ const RequestPreview = () => {
                 </div>
 
                 <div className="reason-input">
-                    <textarea name="" placeholder="+ What's this payment for?" id="" cols="30" rows="10"></textarea>
+                    {textAreaActive && <label htmlFor="">What's this payment for?</label>}
+                    <textarea
+                        name=""
+                        placeholder={!textAreaActive && "+ What's this payment for?"}
+                        id=""
+                        cols="30"
+                        rows="5"
+                        onFocus={() => setTextAreaActive(true)}
+                    ></textarea>
                 </div>
             </div>
 

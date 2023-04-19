@@ -242,6 +242,7 @@ input {
     .send-money-container {
         flex-direction: column;
         margin-left: 1em;
+        background: #f5faf7;
     }
 
     .new-search-container {
