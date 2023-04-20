@@ -1,0 +1,126 @@
+.walletMain {
+  padding: 20px;
+}
+
+.walletContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin: auto;
+}
+
+.walletContainerDiv1 {
+  width: 40%;
+}
+
+.linkCard {
+  padding: 10px;
+}
+
+.linkCardIconP {
+  font-size: 30px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(235, 230, 230);
+  margin: auto;
+}
+
+.linkCardIcon {
+  margin: auto;
+  color: rgb(70, 70, 155);
+}
+
+.linkCardP {
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.paypalBal {
+  border: 2px solid rgb(9, 9, 201);
+  border-radius: 7px;
+  display: flex;
+  padding: 10px;
+}
+
+
+.paypalBalImg {
+
+}
+
+.paypalBalCard {
+
+}
+
+.paypalBalCardP {
+  font-size: 16px;
+  color: rgb(10, 10, 196);
+  font-weight: 600;
+}
+
+.paypalBalCardAvailable {
+  color: black;
+}
+
+.walletContainerDiv2 {
+
+}
+
+.walletContainerDiv2Img {
+
+}
+
+.walletContainerDiv2BalP {
+
+}
+
+.walletContainerDiv2Bal {
+
+}
+
+.walletContainerDiv2P2 {
+
+}
+
+.walletContainerDiv2Btn {
+
+}
+
+.addCurrency {
+
+}
+
+.addCurrencyLink1 {
+
+}
+
+.addCurrencyLink2 {
+
+}
+
+.preferred {
+
+}
+
+.preferredOnline {
+
+}
+
+.setPreferred {
+
+}
+
+.preferredP1 {
+
+}
+
+.preferredP2 {
+
+}
+
+.preferredAbout {
+
+}

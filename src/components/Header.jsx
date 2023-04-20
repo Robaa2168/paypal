@@ -29,7 +29,6 @@ const Header = () => {
         )}
 
         <div className="dashboardheader">
-     
           <div className="navLinks">
             <Link to="#" className="navLink">
               Dashboard
