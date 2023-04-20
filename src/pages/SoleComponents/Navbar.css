@@ -1,0 +1,141 @@
+.pypl-mpesa-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.desktop-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 15em 1em 15em;
+}
+
+.desktop-navbar .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-navbar .logo-container .pypl-logo {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #c5c5c5;
+}
+
+.desktop-navbar .logo-container .mpesa-logo h4 {
+    color: green;
+    font-size: 14px;
+}
+
+.nav-container__desktop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item__desktop {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.nav-item__desktop:hover {
+    transition: 0.3s ease;
+    color: var(--pal-blue);
+}
+
+.login-content {
+    display: flex;
+    align-items: center;
+}
+
+.login-content .user-welcome {
+    color: #c5c0c0;
+    margin-right: 10px;
+}
+
+.login-content button {
+    background: transparent;
+    border: 1px solid var(--pal-blue);
+    padding: 7px 20px;
+    border-radius: 30px;
+    color: var(--pal-blue);
+    cursor: pointer;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* responsiveness */
+
+@media screen and (max-width: 767px) {
+    .pypl-mpesa-header {
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+        background: #fff;
+        padding: 10px;
+    }
+
+    .mobile-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        padding-left: 1em;
+    }
+
+    .pypl-logo {
+        border-right: 1px solid gray;
+        padding-right: 10px;
+    }
+
+    .pypl-logo img {
+        width: 25px;
+    }
+
+    .mpesa-logo h4{
+        padding: 0 10px 0 10px;
+        border-right: 1px solid gray;
+        color: green;
+        font-size: 15px;
+    }
+
+    .hamburger-icon .icon {
+        color: var(--pal-blue);
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    /* mobile navigation styling */
+    .mobile-navigations {
+        width: 100%;
+        transition: top 0.2s ease-in-out;
+    }
+
+    .nav-container__mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-item__mobile {
+        border-top: 1px solid #c5c0c0;
+        padding: 10px 0px 10px 0px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .nav-item__mobile:hover {
+        color: var(--pal-blue);
+        transition: 0.3s ease;
+    }
+}

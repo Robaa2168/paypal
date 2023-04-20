@@ -13,11 +13,12 @@ import Signup from "./components/signup/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SendPreview from "./components/sendPreview/SendPreview";
 import RequestPreview from "./components/requestPreview/RequestPreview";
+import { Homepage, TopUp, Withdraw } from "./pages/PaypalMpesa";
 const App = () => {
   return (
     <ChakraProvider>
       <Router>
-         <Header />
+         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/step4" element={<Step4 />} />
@@ -31,6 +32,12 @@ const App = () => {
           <Route path="/request-money" element={<RequestMoney />} />
           <Route path="request-money/preview" element={<RequestPreview />} />
           <Route path="/activity" element={<Activity />} />
+
+          {/* widthrawal routes */}
+          <Route path="/paypal-mpesa" element={<Homepage />} />
+          <Route path="/paypal-mpesa/withdraw" element={<Withdraw />} />
+          <Route path="/paypal-mpesa/topup" element={<TopUp />} />
+          {/* end of withdrawal routes */}
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </Router>

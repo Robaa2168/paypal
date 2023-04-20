@@ -1,0 +1,135 @@
+.pypl-mpesa-footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    flex-direction: column;
+    background: transparent !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(0pc) saturate(180%) !important;
+    /* border-top: 1px solid rgba(0, 0, 0, 0.15); */
+    width: 100%;
+    padding-left: 50rem;
+    padding-right: 1.5em;
+    /* border: 1px solid red; */
+    margin: 0;
+}
+
+
+.note a {
+    color: #005EA6;
+}
+
+.footer-img {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 22rem;
+    display: block;
+    max-width: 100%;
+}
+
+.footer-navigations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navs {
+    display: flex;
+    align-items: center;
+}
+
+.navs li {
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.powered {
+    display: flex;
+}
+
+.powered span {
+    font-size: 12px !important;
+}
+
+.powered h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* footer styling that detects pathname e.g withdrawal and topup */
+.withdraw-topup-footer {
+    position: fixed;
+    bottom: 0;
+    width: 75vw;
+    right: 0;
+    left:15vw;
+}
+
+/* end of footer styling for path detection */
+
+@media screen and (max-width: 767px) {
+    .pypl-mpesa-footer {
+        margin: 0;
+        padding: 0.5em 1em 0.5em 1em;
+        background-color: #fff !important;
+        z-index: 999;
+        display: flex;
+    }
+
+    .withdraw-topup-footer {
+        background: #fff;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        margin-top: 1em;
+    }
+
+    .footer-img {
+        display: none;
+    }
+
+    .footer-navigations {
+        padding: 0;
+
+    }
+
+    .navs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navs li {
+        font-size: 12px;
+        font-weight: 500;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .note p {
+        font-size: 10px;
+    }
+
+    .note a {
+        color: #005EA6;
+        cursor: pointer;
+    }
+
+    .powered {
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        margin-top: -10px;
+    }
+
+    .powered span {
+        /* margin-top: 10px; */
+        margin-right: 5px;
+    }
+}

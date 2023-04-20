@@ -1,0 +1,87 @@
+.pypl-mpesa-section {
+    height: 88vh;
+    background: url(https://res.cloudinary.com/dztycn4or/image/upload/v1681885826/home-bg-logged_f051pj.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.pypl-wlcm-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 23rem;
+    padding-top: 13rem;
+    max-width: 25em;
+}
+
+.pypl-wlcm-info h1 {
+    color: #0070ba;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+.pypl-wlcm-info p {
+    font-size: 15px;
+}
+
+.pypl-wlt-btns-container {
+    display: flex;
+}
+
+.pypl-wlt-btns-container :first-child {
+    margin-right: 1em !important;
+}
+
+.pypl-wlt-btns-container .button {
+    background-color: #0070BA;
+    color: #fff;
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    padding: 7px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.pypl-wlt-btns-container .button:hover {
+    background-color: #005EA6;
+    transition: 0.2s ease-in-out;
+}
+
+
+/* responsoveness */
+
+@media screen and (max-width: 767px) {
+    .pypl-mpesa-section {
+        background-position: 40%;
+    }
+
+    .pypl-wlcm-info {
+        margin-left: 1em;
+        padding-top: 15%;
+        width: 290px;
+    }
+
+    .pypl-wlcm-info h1 {
+        font-size: 1.5em;
+        max-width: 8em !important;
+    }
+
+    .pypl-wlcm-info p {
+        font-size: 11px;
+        max-width: 15em;
+    }
+
+    .pypl-wlt-btns-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        max-width: 15em;
+    }
+
+    .pypl-wlt-btns-container :first-child {
+        margin-right: 0;
+    }
+
+    .pypl-wlt-btns-container .button {
+        font-size: 12px;
+    }
+}
