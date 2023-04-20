@@ -101,8 +101,9 @@ function Wallet1() {
               <CiMenuKebab className="div9Icon" onClick={togglePopup} />
               {popupVisible && (
                 <div className="popupMenu">
-                  <Link className="popupLink">Link 1</Link>
-                  <Link className="popupLink">Link 2</Link>
+                  <Link className="popupLink">Make primary</Link>
+                  <Link className="popupLink">Activate currency</Link>
+                  <Link className="popupLink">Close currency</Link>
                 </div>
               )}
             </div>
