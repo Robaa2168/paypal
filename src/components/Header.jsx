@@ -37,7 +37,7 @@ const Header = () => {
             <Link to="#" className="navLink">
               Send and Request
             </Link>
-            <Link to="#" className="navLink">
+            <Link to="/wallet" className="navLink">
               Wallet
             </Link>
             <Link to="#" className="navLink">
