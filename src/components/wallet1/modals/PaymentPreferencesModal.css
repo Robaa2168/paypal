@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  transition: 3s ease;
 }
 
 .modal-contentPayment {
@@ -18,6 +19,7 @@
   width: 80%;
   max-width: 600px;
   height: 100vh;
+  transition: 3s ease;
 }
 
 .closeContainerPayment {
@@ -58,7 +60,11 @@
   line-height: 1.3;
 }
 
-.settingPreferred, .toUse, .paymentOptions, .multipleCurrencies, .agreement {
+.settingPreferred,
+.toUse,
+.paymentOptions,
+.multipleCurrencies,
+.agreement {
   color: black;
   margin: 16px 0;
 }
@@ -70,13 +76,15 @@
   margin: 16px 0 16px 50px;
 }
 
-.friends, .usingPaypal {
+.friends,
+.usingPaypal {
   font-weight: 600;
   color: black;
 
 }
 
-.paymentOptions, .multipleCurrencies {
+.paymentOptions,
+.multipleCurrencies {
   margin-top: 0;
 }
 

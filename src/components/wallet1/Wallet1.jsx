@@ -5,7 +5,7 @@ import { AiFillCreditCard } from "react-icons/ai";
 import PaymentPreferencesModal from "./modals/PaymentPreferencesModal";
 
 function Wallet1() {
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
   const [modalVisible2, setModalVisible2] = useState(false);
   const [modalVisible3, setModalVisible3] = useState(false);
