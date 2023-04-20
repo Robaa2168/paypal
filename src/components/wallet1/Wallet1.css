@@ -128,6 +128,60 @@
   margin: auto;
 }
 
+.walletContainingCurrency {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.walletContainingCurrencyDiv {
+  display: flex;
+
+}
+
+.walletContainingCurrencyDiv1 {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.walletContainingCurrencyImg {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.walletContainingCurrencyP,
+.walletContainingCurrencyP1,
+.walletContainingCurrencyBal {
+  font-size: 12px;
+}
+
+.walletContainingCurrencyP1 {
+  border: 1px solid blue;
+  height: 18px;
+  padding: 0 2px;
+  border-radius: 3px;
+  color: blue;
+}
+
+.walletContainingCurrencyP2 {
+  margin-left: 10px;
+}
+
+.div9 {
+  display: flex;
+}
+
+.div10 {
+  text-align: right;
+}
+
+.div9Icon {
+  margin: auto 0 auto 5px;
+  cursor: pointer;
+}
+
 .walletContainerDiv2Btn:hover {
   border: 1px solid rgb(17, 17, 180);
   background-color: rgb(17, 17, 180);
@@ -139,14 +193,16 @@
   padding: 10px;
 }
 
-.addCurrencyLink1, .addCurrencyLink2 {
+.addCurrencyLink1,
+.addCurrencyLink2 {
   color: rgb(10, 10, 196);
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
 }
 
-.addCurrencyLink1:hover, .addCurrencyLink2:hover {
+.addCurrencyLink1:hover,
+.addCurrencyLink2:hover {
   text-decoration: underline;
 }
 
@@ -192,7 +248,8 @@
   text-decoration: underline;
 }
 
-.preferredAbout:focus, .setPreferred:focus {
+.preferredAbout:focus,
+.setPreferred:focus {
   border: 2px solid rgb(10, 10, 196);
   border-radius: 5px;
   padding: 3px;
