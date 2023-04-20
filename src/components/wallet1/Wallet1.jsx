@@ -6,12 +6,17 @@ import { CiMenuKebab } from "react-icons/ci";
 import PaymentPreferencesModal from "./modals/PaymentPreferencesModal";
 import SetPreferredModal from "./modals/SetPreferredModal";
 import AddCurrencyModal from "./modals/AddCurrencyModal";
+import MakePrimaryModal from "./modals/MakePrimaryModal";
+import ActivateCurrencyModal from "./modals/ActivateCurrencyModal";
+import CloseCurrencyModal from "./modals/CloseCurrencyModal";
 
 function Wallet1() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
   const [modalVisible2, setModalVisible2] = useState(false);
   const [modalVisible3, setModalVisible3] = useState(false);
+  const [modalVisible4, setModalVisible4] = useState(false);
+  const [modalVisible5, setModalVisible5] = useState(false);
   const [popupVisible, setPopupVisible] = useState(false);
 
   function toggleModal() {
@@ -28,6 +33,14 @@ function Wallet1() {
 
   function toggleModal3() {
     setModalVisible3(!modalVisible3);
+  }
+
+  function toggleModal4() {
+    setModalVisible4(!modalVisible4);
+  }
+
+  function toggleModal5() {
+    setModalVisible5(!modalVisible5);
   }
 
   function togglePopup() {
@@ -101,9 +114,15 @@ function Wallet1() {
               <CiMenuKebab className="div9Icon" onClick={togglePopup} />
               {popupVisible && (
                 <div className="popupMenu">
-                  <Link className="popupLink">Make primary</Link>
-                  <Link className="popupLink">Activate currency</Link>
-                  <Link className="popupLink">Close currency</Link>
+                  <Link className="popupLink" onClick={toggleModal3}>
+                    Make primary
+                  </Link>
+                  <Link className="popupLink" onClick={toggleModal4}>
+                    Activate currency
+                  </Link>
+                  <Link className="popupLink" onClick={toggleModal5}>
+                    Close currency
+                  </Link>
                 </div>
               )}
             </div>
@@ -140,6 +159,12 @@ function Wallet1() {
         />
         <SetPreferredModal isVisible={modalVisible1} onClose={toggleModal1} />
         <AddCurrencyModal isVisible={modalVisible2} onClose={toggleModal2} />
+        <MakePrimaryModal isVisible={modalVisible3} onClose={toggleModal3} />
+        <ActivateCurrencyModal
+          isVisible={modalVisible4}
+          onClose={toggleModal4}
+        />
+        <CloseCurrencyModal isVisible={modalVisible5} onClose={toggleModal5} />
       </div>
     </div>
   );
