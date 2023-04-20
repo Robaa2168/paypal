@@ -8,16 +8,16 @@ function Wallet1() {
     <div className="walletMain">
       <div className="walletContainer">
         <div className="walletContainerDiv1">
-          <Link className="linkCard">
+          <p className="linkCard">
             <p className="linkCardIconP">
               <AiFillCreditCard className="linkCardIcon" />
             </p>
             <p className="linkCardP">Link a card</p>
-          </Link>
+          </p>
 
           <div className="paypalBal">
             <img
-              scr="/paypal123.png"
+              src="/paypal123.png"
               alt="walletLogo"
               className="paypalBalImg"
             />
@@ -29,7 +29,11 @@ function Wallet1() {
         </div>
 
         <div className="walletContainerDiv2">
-          <img scr="/paypal123.png" alt="walletLogo" className="walletContainerDiv2Img" />
+          <img
+            src="/paypal123.png"
+            alt="walletLogo"
+            className="walletContainerDiv2Img"
+          />
           <p className="walletContainerDiv2BalP">PayPal balance</p>
           <p className="walletContainerDiv2Bal">$0.00</p>
           <p className="walletContainerDiv2P2">Available</p>
