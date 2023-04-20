@@ -9,7 +9,7 @@ import AddCurrencyModal from "./modals/AddCurrencyModal";
 function Wallet1() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
-  const [modalVisible2, setModalVisible2] = useState(true);
+  const [modalVisible2, setModalVisible2] = useState(false);
   const [modalVisible3, setModalVisible3] = useState(false);
 
   function toggleModal() {
