@@ -53,27 +53,49 @@ function AddCurrencyModal({ isVisible, onClose }) {
                 <div className="radio-addCurrency">
                   <label className="inputRadio">
                     <Field type="radio" name="addCurrencyValue" value="CAD" />
-                    <img src="/canada.png" alt="canada" className="allFlags" /> Canadian Dollar
+                    <img
+                      src="/canada.png"
+                      alt="canada"
+                      className="allFlags"
+                    />{" "}
+                    Canadian Dollar
                   </label>
                   <label className="inputRadio">
                     <Field type="radio" name="addCurrencyValue" value="EUR" />
-                    <img src="/european.png" alt="europe" className="allFlags" />Euro
+                    <img
+                      src="/european.png"
+                      alt="europe"
+                      className="allFlags"
+                    />
+                    Euro
                   </label>
                   <label className="inputRadio">
                     <Field type="radio" name="addCurrencyValue" value="GBP" />
-                    <img src="/united-kingdom.png" alt="britain" className="allFlags" />British Pound
+                    <img
+                      src="/united-kingdom.png"
+                      alt="britain"
+                      className="allFlags"
+                    />
+                    British Pound
                   </label>
                   <label className="inputRadio">
                     <Field type="radio" name="addCurrencyValue" value="JPY" />
-                    <img src="/japan.png" alt="japan" className="allFlags" />Japanese Yen
+                    <img src="/japan.png" alt="japan" className="allFlags" />
+                    Japanese Yen
                   </label>
                   <label className="inputRadio">
                     <Field type="radio" name="addCurrencyValue" value="SWF" />
-                    <img src="/switzerland.png" alt="swiss" className="allFlags" />Swiss Franc
+                    <img
+                      src="/switzerland.png"
+                      alt="swiss"
+                      className="allFlags"
+                    />
+                    Swiss Franc
                   </label>
                 </div>
                 {errors.addCurrencyValue && touched.addCurrencyValue ? (
-                  <div className="errorAddCurrency"><IoWarningSharp className="errIcon" />
+                  <div className="errorAddCurrency">
+                    <IoWarningSharp className="errIcon" />
                     {errors.addCurrencyValue}
                   </div>
                 ) : null}
