@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Wallet1.css";
 import { Link } from "react-router-dom";
 import { AiFillCreditCard } from "react-icons/ai";
+import PaymentPreferencesModal from "./modals/PaymentPreferencesModal";
 
 function Wallet1() {
+  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible1, setModalVisible1] = useState(false);
+  const [modalVisible2, setModalVisible2] = useState(false);
+  const [modalVisible3, setModalVisible3] = useState(false);
+
+  function toggleModal() {
+    setModalVisible(!modalVisible);
+  }
+
+  function toggleModal1() {
+    setModalVisible1(!modalVisible1);
+  }
+
+  function toggleModal2() {
+    setModalVisible2(!modalVisible2);
+  }
+
+  function toggleModal3() {
+    setModalVisible3(!modalVisible3);
+  }
   return (
     <div className="walletMain">
       <div className="walletContainer">
@@ -54,11 +75,12 @@ function Wallet1() {
               If you don't have enough money in your balance, we'll ask you to
               pick another funding source at checkout.
             </p>
-            <Link className="preferredAbout">
+            <Link className="preferredAbout" onClick={toggleModal}>
               More about payment preferences
             </Link>
           </div>
         </div>
+        <PaymentPreferencesModal isVisible={modalVisible} onClose={toggleModal} />
       </div>
     </div>
   );
