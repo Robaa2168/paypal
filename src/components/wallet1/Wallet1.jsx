@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Wallet1.css";
 import { Link } from "react-router-dom";
 import { AiFillCreditCard } from "react-icons/ai";
@@ -18,6 +18,23 @@ function Wallet1() {
   const [modalVisible4, setModalVisible4] = useState(false);
   const [modalVisible5, setModalVisible5] = useState(false);
   const [popupVisible, setPopupVisible] = useState(false);
+
+  const popupMenuRef = useRef();
+
+  function handleClickOutside(event) {
+    if (popupMenuRef.current && !popupMenuRef.current.contains(event.target)) {
+      setPopupVisible(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  
+  
 
   function toggleModal() {
     setModalVisible(!modalVisible);
@@ -113,7 +130,7 @@ function Wallet1() {
               </div>
               <CiMenuKebab className="div9Icon" onClick={togglePopup} />
               {popupVisible && (
-                <div className="popupMenu">
+                <div className="popupMenu" ref={popupMenuRef}>
                   <Link className="popupLink" onClick={toggleModal3}>
                     Make primary
                   </Link>
