@@ -3,11 +3,13 @@ import "./Wallet1.css";
 import { Link } from "react-router-dom";
 import { AiFillCreditCard } from "react-icons/ai";
 import PaymentPreferencesModal from "./modals/PaymentPreferencesModal";
+import SetPreferredModal from "./modals/SetPreferredModal";
+import AddCurrencyModal from "./modals/AddCurrencyModal";
 
 function Wallet1() {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible1, setModalVisible1] = useState(false);
-  const [modalVisible2, setModalVisible2] = useState(false);
+  const [modalVisible2, setModalVisible2] = useState(true);
   const [modalVisible3, setModalVisible3] = useState(false);
 
   function toggleModal() {
@@ -60,13 +62,13 @@ function Wallet1() {
           <p className="walletContainerDiv2P2">Available</p>
           <button className="walletContainerDiv2Btn">Send payments</button>
           <div className="addCurrency">
-            <Link className="addCurrencyLink1">Add a currency</Link>
+            <Link className="addCurrencyLink1" onClick={toggleModal2}>Add a currency</Link>
             <Link className="addCurrencyLink2">Currency Calculator</Link>
           </div>
 
           <div className="preferred">
             <p className="preferredOnline">Preferred when paying online</p>
-            <Link className="setPreferred">Set as preferred</Link>
+            <Link className="setPreferred" onClick={toggleModal1}>Set as preferred</Link>
             <p className="preferredP1">
               We'll use your available balance when you shop online or send
               money for goods and services.
@@ -81,6 +83,8 @@ function Wallet1() {
           </div>
         </div>
         <PaymentPreferencesModal isVisible={modalVisible} onClose={toggleModal} />
+        <SetPreferredModal isVisible={modalVisible1} onClose={toggleModal1} />
+        <AddCurrencyModal isVisible={modalVisible2} onClose={toggleModal2} />
       </div>
     </div>
   );
