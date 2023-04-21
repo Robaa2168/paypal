@@ -13,6 +13,8 @@ import Signup from "./components/signup/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SendPreview from "./components/sendPreview/SendPreview";
 import RequestPreview from "./components/requestPreview/RequestPreview";
+import Wallet1 from "./components/wallet1/Wallet1";
+import Footer from "./components/Footer";
 import { Homepage, TopUp, Withdraw } from "./pages/PaypalMpesa";
 const App = () => {
   return (
@@ -32,14 +34,15 @@ const App = () => {
           <Route path="/request-money" element={<RequestMoney />} />
           <Route path="request-money/preview" element={<RequestPreview />} />
           <Route path="/activity" element={<Activity />} />
-
-          {/* widthrawal routes */}
+  {/* widthrawal routes */}
           <Route path="/paypal-mpesa" element={<Homepage />} />
           <Route path="/paypal-mpesa/withdraw" element={<Withdraw />} />
           <Route path="/paypal-mpesa/topup" element={<TopUp />} />
           {/* end of withdrawal routes */}
+            <Route path="/wallet" element={<Wallet1 />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
+        <Footer />
       </Router>
     </ChakraProvider>
   );

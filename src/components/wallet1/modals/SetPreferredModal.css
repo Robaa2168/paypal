@@ -1,0 +1,119 @@
+.modalChoose {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(228, 224, 224);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contentChoose {
+  background-color: white;
+  padding: 20px;
+
+  width: 80%;
+  max-width: 600px;
+  height: 100vh;
+}
+
+.closeContainerChoose {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.closeChoose {
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: #777272;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+.closeChoose:hover {
+  color: blue;
+}
+
+.chooseImg {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.modalContentChooseDiv {
+  width: 60%;
+  margin: auto;
+}
+
+.choosePreference {
+  color: black;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.goodsAndServices {
+  font-size: 14px;
+  color: black;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.morePreferences {
+  color: rgb(20, 20, 155);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.morePreferences:hover {
+  text-decoration: underline;
+}
+
+.radio-preferred {
+  border-top: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+.chooseImg1 {
+  width: 15px;
+  margin: 0 8px;
+}
+
+.errorPreferred {
+  color: red;
+  margin: 20px 0;
+}
+
+.btnChoose {
+  width: 100%;
+  padding: 8px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid rgb(7, 7, 145);
+  background-color: rgb(7, 7, 145);
+  color: white;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.btnChoose:hover {
+  background-color: rgb(11, 11, 107);
+}
+
+@media (max-width: 641px) {
+  .modal-contentChoose {
+    width: 100%;
+  }
+
+  .modalContentChoose {
+    width: 80%;
+  }
+}

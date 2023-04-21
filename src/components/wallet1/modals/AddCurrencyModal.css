@@ -1,0 +1,135 @@
+.modalAddCurrency {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(228, 224, 224);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contentAddCurrency {
+  background-color: white;
+  padding: 20px;
+
+  width: 80%;
+  max-width: 600px;
+  height: 100vh;
+}
+
+.closeContainerAddCurrency {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.closeAddCurrency {
+  font-size: 25px;
+  color: #777272;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+.closeAddCurrency:hover {
+  color: blue;
+}
+
+.addCurrencyImg {
+  height: 30px;
+}
+
+.modalContentAddCurrencyDiv {
+  width: 60%;
+  margin: auto;
+}
+
+.AddCurrencyPa {
+  font-size: 30px;
+  font-weight: 400;
+  color: black;
+  margin: 10px 0;
+}
+
+.AddCurrencyPa2 {
+  font-size: 13px;
+}
+
+.radio-addCurrency {
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+input[type=radio] {
+  width: 23px;
+  height: 23px;
+  margin-right: 20px;
+}
+
+.inputRadio {
+  border-top: 1px dotted gray;
+  margin: 0;
+  padding: 10px;
+}
+
+.inputRadio:first-child {
+  border-top: 1px solid gray;
+}
+
+.inputRadio:last-child {
+  border-bottom: 1px solid gray;
+}
+
+.allFlags {
+  margin-right: 10px;
+}
+
+.errorAddCurrency {
+  color: black;
+  margin: 20px 0;
+  display: flex;
+  border: 1px solid rgb(235, 42, 42);
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.errIcon {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  font-size: 25px;
+  color: rgb(235, 42, 42);
+}
+
+.btnAddCurrency {
+  width: 100%;
+  padding: 8px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid rgb(7, 7, 145);
+  background-color: rgb(7, 7, 145);
+  color: white;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.btnAddCurrency:hover {
+  background-color: rgb(11, 11, 107);
+  text-decoration: underline;
+}
+
+@media (max-width: 641px) {
+  .modal-contentAddCurrency {
+    width: 100%;
+  }
+
+  .modalContentAddCurrency {
+    width: 90%;
+    padding: 10px;
+  }
+}

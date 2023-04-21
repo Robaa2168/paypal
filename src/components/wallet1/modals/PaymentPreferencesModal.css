@@ -1,0 +1,124 @@
+.modalPayment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(228, 224, 224);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+}
+
+.modal-contentPayment {
+  background-color: white;
+  padding: 20px;
+
+  width: 80%;
+  max-width: 600px;
+  height: 100vh;
+
+}
+
+.closeContainerPayment {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.closePayment {
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: #777272;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+.closePayment:hover {
+  color: blue;
+}
+
+.paymentImg {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.modalContentPaymentDiv {
+  width: 60%;
+  margin: auto;
+}
+
+.payingOnline {
+  color: black;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.settingPreferred,
+.toUse,
+.paymentOptions,
+.multipleCurrencies,
+.agreement {
+  color: black;
+  margin: 16px 0;
+}
+
+.paymentList1 {
+  color: black;
+  font-size: 13px;
+  list-style-type: '- ';
+  margin: 16px 0 16px 50px;
+}
+
+.friends,
+.usingPaypal {
+  font-weight: 600;
+  color: black;
+
+}
+
+.paymentOptions,
+.multipleCurrencies {
+  margin-top: 0;
+}
+
+.agreementLink {
+  color: rgb(19, 19, 216);
+  font-weight: 600;
+}
+
+.agreementLink:hover {
+  text-decoration: underline;
+}
+
+.btnPayment {
+  width: 100%;
+  padding: 8px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid rgb(7, 7, 145);
+  background-color: rgb(7, 7, 145);
+  color: white;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.btnPayment:hover {
+  background-color: rgb(11, 11, 107);
+}
+
+@media (max-width: 641px) {
+  .modal-contentPayment {
+    width: 100%;
+  }
+
+  .modalContentPaymentDiv {
+    width: 80%;
+  }
+}
