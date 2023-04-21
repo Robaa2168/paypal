@@ -1,0 +1,230 @@
+.topup-section {
+    margin: 6% 15em 1.5em 15em;
+}
+
+.main-topup-section > div {
+    /* border: 1px solid blue; */
+}
+
+.topup-header h1 {
+    color: #0070ba;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.add-money-container {
+    display: flex;
+    /* align-items: center; */
+    margin-top: 50px;
+}
+
+.popup-pic {
+    position: relative;
+}
+
+.popup-pic img {
+    max-width: 100%;
+    display: block;
+    padding-top: 20px !important;
+}
+
+.how-to-container {
+    margin-bottom: 2em;
+}
+
+.topup-directions-howto h3 {
+    
+}
+
+.how-to-container .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.how-to-container .item .bullet-number {
+    margin-right: 10px;
+    padding: 0.5em;
+    background-color: #cacaca;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.text-highlighted {
+    font-weight: 500;
+    color: #0070ba;
+}
+
+.topup-calculator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    background-color: #f1f4f6;
+    padding: 5rem 3rem 5rem 3rem;
+    border-bottom: 1px solid #cacbcb;
+    border-top: 1px solid #cacbcb;
+}
+
+.topup-input {
+    width: 50%;
+}
+
+.topup-calculator input {
+    border: 3px solid #cacbcb;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0.5em;
+    border-right: none;
+}
+
+.topup-calculator select {
+    appearance: none;
+    padding: 0.5em;
+    border: 3px solid #cacbcb;
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    background-color: #cacbcb;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.topup-input-container {
+    margin-bottom: 1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-select {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    width: 100%;
+}
+
+.button-container button {
+    width: 100% !important;
+}
+
+.topupfunds-output {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+
+.topupfunds-output p {
+    margin: 0;
+    font-weight: 700;
+}
+
+.topupfunds-output p > span {
+    font-weight: 700;
+}
+
+.topupfunds-output span {
+    font-size: 14px;
+}
+
+
+/* responsiveness */
+
+@media screen and (max-width: 767px) {
+    .topup-section {
+        margin: 15% 2em 1em 2em;
+    }
+
+    .topup-header h1 {
+        font-weight: lighter;
+        font-size: 30px;
+    }
+
+    .topup-pic {
+        display: none !important;
+    }
+
+    .add-money-container {
+        font-size: 13px;
+    }
+
+    .how-to-container .item {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .how-to-container .item .bullet-number {
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
+        padding: 1rem;
+    }
+
+    .how-to-container .item li {
+        color: #909090;
+    }
+
+    .topup-directions-howto h3 {
+        font-size: 20px;
+    }
+    
+    .topup-directions-howto p {
+        color: #909090;
+    }
+
+    .topup-calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+        margin-top: 3rem;
+        padding: 2rem 2rem 2rem 2rem;
+        font-size: 13px;
+    }
+
+    .topup-input {
+        width: 100%;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    form span {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .topup-calculator select {
+        margin-right: 0;
+    }
+
+    .topup-input-container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .topupfunds-output {
+        margin-left: 0;
+        margin-top: 1rem;
+        border-top: 1px solid #cacbcb;
+        width: 100%;
+    }
+
+    .topupfunds-output p {
+        font-size: 20px;
+    }
+
+    .topupfunds-output h3 {
+        font-size: 40px;
+    }
+}

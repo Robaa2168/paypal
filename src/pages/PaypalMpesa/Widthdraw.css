@@ -1,0 +1,103 @@
+.pypl-withdraw-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10% 20rem 3rem 20rem;
+}
+
+.intro-header {
+    text-align: center;
+    color: #0070ba;
+}
+
+.pypl-withdraw-section > div {
+    margin-bottom: 1.5em;
+}
+
+.withdraw-wrapper-splitter {
+    width: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.withdraw-container .balance {
+    border-bottom: 1px solid #333 !important;
+    margin-bottom: 1.5em;
+}
+
+.withdraw-container p {
+    max-width: 20em;
+    font-size: 14px;
+    margin-bottom: 1em;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 1em;
+}
+.input-container input {
+    border: 3px solid #cacbcb;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0.5em;
+    border-right: none;
+}
+
+.input-container input:focus {
+    border-right: 3px !important;
+}
+
+.input-container select {
+    appearance: none;
+    padding: 0.5em;
+    border: 3px solid #cacbcb;
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    background-color: #cacbcb;
+}
+
+.button-container button {
+    background: #0070ba;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.important-info {
+    text-align: center;
+    color: #0070ba;
+    padding-left: 10em;
+    margin-top: 1.5em;
+    padding-bottom: 3em;
+    border-bottom: 1px solid #cacbcb;
+    
+}
+
+
+@media screen and (max-width: 767px) {
+    .svg-transfer-illustration {
+        display: none;
+    }
+
+    .intro-header h1 {
+        font-size: 25px;
+        line-height: 1.5em;
+    }
+
+    .pypl-withdraw-section {
+        padding: 10% 2rem 3rem 2rem;
+    }
+
+    .withdraw-wrapper-splitter {
+        width: 100%;
+    }
+
+    .important-info {
+        padding: 0;
+        text-align: left;
+        font-size: 14px;
+    }
+}
