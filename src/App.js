@@ -20,7 +20,7 @@ const App = () => {
   return (
     <ChakraProvider>
       <Router>
-         {/* <Header /> */}
+         <Header />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/step4" element={<Step4 />} />
