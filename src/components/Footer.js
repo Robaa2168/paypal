@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="main">
+    <div className="main9">
       <div className="container1">
         <img src="/paypal122.png" alt="paypalLogo" />
         <div className="help">
