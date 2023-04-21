@@ -285,3 +285,27 @@
   border-radius: 5px;
   padding: 3px;
 }
+
+@media (max-width: 768px) {
+
+  .walletMain {
+    padding: 10px;
+  }
+
+  .walletContainer {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding: 3%;
+  }
+
+  .walletContainerDiv1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .walletContainerDiv2 {
+    width: 100%;
+  }
+  
+}
